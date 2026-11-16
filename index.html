@@ -138,6 +138,14 @@
   .health ul { margin: 0; padding-left: 20px; font-size: 16px; }
   .health li { margin: 4px 0; }
   @media (max-width: 640px) { .health { padding: 20px; } .health-head { flex-direction: column; gap: 12px; } .health-cols { grid-template-columns: 1fr; } }
+  .watch { margin: 0 auto 18px; max-width: 300px; }
+  .watch svg { display: block; width: 100%; height: auto; }
+  @media (min-width: 861px) { .health { display: grid; grid-template-columns: 280px 1fr; column-gap: 32px; align-items: center; } .watch { grid-row: 1 / span 2; margin: 0; } .health-cols { grid-column: 2; } }
+  .grid { gap: 12px; }
+  .grid .card { padding: 14px 16px; border-radius: 16px; display: grid; grid-template-columns: 36px 1fr; column-gap: 12px; align-items: start; }
+  .grid .card .ic { width: 36px; height: 36px; border-radius: 10px; font-size: 19px; margin: 2px 0 0; grid-row: span 2; }
+  .grid .card h3 { font-size: 16.5px; margin: 0 0 2px; }
+  .grid .card p { font-size: 14.5px; line-height: 1.45; }
 </style>
 </head>
 <body>
@@ -197,11 +205,30 @@
         <div class="card"><div class="ic">👟</div><h3>Koll på utrustningen</h3><p>Håll reda på hur långt dina skor har gått och vad ryggsäcken vägde – appen säger till när skorna är slitna.</p></div>
       </div>
       <div class="health">
+        <figure class="watch" aria-label="Illustration: en klocka visar steg och puls som hamnar i StegAppen">
+          <svg viewBox="0 0 300 200" role="img" xmlns="http://www.w3.org/2000/svg">
+            <title>Steg och puls från klockan hamnar i StegAppen</title>
+            <rect x="58" y="4" width="64" height="44" rx="14" fill="#2B2F2C"/>
+            <rect x="58" y="152" width="64" height="44" rx="14" fill="#2B2F2C"/>
+            <rect x="36" y="34" width="108" height="132" rx="34" fill="#1B1D1C"/>
+            <rect x="144" y="70" width="8" height="26" rx="4" fill="#3A3F3B"/>
+            <rect x="145" y="104" width="6" height="16" rx="3" fill="#3A3F3B"/>
+            <rect x="46" y="44" width="88" height="112" rx="26" fill="#000"/>
+            <circle cx="90" cy="88" r="27" fill="none" stroke="#24402F" stroke-width="7"/>
+            <circle cx="90" cy="88" r="27" fill="none" stroke="#4FB07A" stroke-width="7" stroke-linecap="round" stroke-dasharray="140 170" transform="rotate(-90 90 88)"/>
+            <text x="90" y="86" text-anchor="middle" font-family="-apple-system,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#fff">8 214</text>
+            <text x="90" y="99" text-anchor="middle" font-family="-apple-system,Helvetica,Arial,sans-serif" font-size="8" fill="#A2AFA6">steg</text>
+            <text x="90" y="138" text-anchor="middle" font-family="-apple-system,Helvetica,Arial,sans-serif" font-size="12" font-weight="600" fill="#FF5A67">♥ 72</text>
+            <path d="M168 100 h56" stroke="#E08A2C" stroke-width="5" stroke-linecap="round" stroke-dasharray="2 12"/>
+            <path d="M222 90 l12 10 l-12 10" fill="none" stroke="#E08A2C" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+            <rect x="244" y="74" width="52" height="52" rx="14" fill="#2F7D4F"/>
+            <text x="270" y="108" text-anchor="middle" font-size="24">👣</text>
+          </svg>
+        </figure>
         <div class="health-head">
-          <div class="health-ic" aria-hidden="true">❤️</div>
           <div>
             <h3>Hämtar allt från Hälsa-appen</h3>
-            <p>Slå på Apple Hälsa när du startar appen, så hämtar StegAppen dina steg och hälsodata automatiskt – även från Apple Watch och andra klockor och vågar som sparar i Hälsa. Du behöver inte fylla i något själv.</p>
+            <p>Slå på Apple Hälsa när du startar appen, så hämtar StegAppen dina steg och hälsodata automatiskt. Har du Apple Watch räknas stegen från klockan också – även när telefonen ligger kvar hemma. Det gäller även andra klockor och vågar som sparar i Hälsa. Du behöver inte fylla i något själv.</p>
           </div>
         </div>
         <div class="health-cols">
