@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Integritetspolicy – StegAppen</title>
+<meta name="description" content="Så hanterar StegAppen dina personuppgifter: vad som sparas på telefonen, vad som delas med vänner, data från Hälsa-appen och dina rättigheter.">
+<meta name="theme-color" content="#2F7D4F">
+<meta name="color-scheme" content="light only">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="StegAppen">
+<meta property="og:title" content="Integritetspolicy – StegAppen">
+<meta property="og:description" content="Så hanterar StegAppen dina personuppgifter.">
+<meta property="og:url" content="https://stegappen.se/integritet/">
+<meta property="og:image" content="https://stegappen.se/img/og.png">
+<link rel="icon" href="/icon.png">
+<link rel="apple-touch-icon" href="/icon.png">
+<style>
+  :root {
+    --bg: #F4F6F1; --surface: #FFFFFF; --text: #1E2A22; --muted: #5F6E64; --line: #E3E8E0;
+    --green: #2F7D4F; --green-soft: #DCEFE2; --orange: #E08A2C; --orange-soft: #FBEBD6;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 17px/1.6 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif; overflow-x: hidden; }
+  a { color: var(--green); }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 0 16px; }
+  .brand .s { color: var(--green); } .brand .a { color: var(--orange); }
+  header.top { position: sticky; top: 0; z-index: 10; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: saturate(1.4) blur(12px); -webkit-backdrop-filter: saturate(1.4) blur(12px); border-bottom: 1px solid var(--line); }
+  header.top .wrap { display: flex; align-items: center; gap: 10px; height: 60px; max-width: 1080px; }
+  header.top img { width: 34px; height: 34px; border-radius: 9px; background: #fff; }
+  header.top .brand { font-weight: 700; font-size: 20px; letter-spacing: -.2px; text-decoration: none; display: flex; align-items: center; gap: 10px; }
+  header.top nav { margin-left: auto; }
+  header.top nav a { color: var(--muted); text-decoration: none; font-size: 15px; }
+  main { padding: 40px 0 24px; }
+  h1 { font-size: clamp(32px, 6vw, 46px); line-height: 1.1; letter-spacing: -1px; margin: 0 0 10px; }
+  .updated { color: var(--muted); margin: 0 0 24px; font-size: 15px; }
+  .lead { font-size: 19px; color: var(--muted); margin: 0 0 28px; }
+  .summary { background: var(--surface); border: 1px solid var(--line); border-radius: 20px; padding: 20px 22px; margin: 0 0 36px; }
+  .summary h2 { margin-top: 0; font-size: 20px; }
+  .summary ul { margin: 0; padding-left: 20px; }
+  .summary li { margin: 6px 0; }
+  nav.toc { margin: 0 0 36px; font-size: 15px; }
+  nav.toc ol { margin: 0; padding-left: 22px; columns: 2; column-gap: 32px; }
+  @media (max-width: 560px) { nav.toc ol { columns: 1; } }
+  nav.toc li { margin: 3px 0; break-inside: avoid; }
+  section { margin: 0 0 34px; scroll-margin-top: 76px; }
+  h2 { font-size: 24px; letter-spacing: -.4px; line-height: 1.2; margin: 0 0 10px; }
+  h3 { font-size: 18px; margin: 20px 0 6px; }
+  p { margin: 0 0 12px; }
+  ul { margin: 0 0 12px; padding-left: 22px; }
+  li { margin: 4px 0; }
+  .table { width: 100%; border-collapse: collapse; font-size: 15px; background: var(--surface); border-radius: 14px; overflow: hidden; border: 1px solid var(--line); margin: 6px 0 14px; }
+  .table th, .table td { text-align: left; padding: 10px 12px; border-top: 1px solid var(--line); vertical-align: top; }
+  .table th { background: var(--green-soft); border-top: 0; font-size: 14px; }
+  @media (max-width: 560px) {
+    .table thead { display: none; }
+    .table tr { display: block; border-top: 1px solid var(--line); padding: 8px 0; }
+    .table tr:first-child { border-top: 0; }
+    .table td { display: block; border: 0; padding: 3px 12px; }
+    .table td:first-child { font-weight: 700; }
+    .table td[data-l]::before { content: attr(data-l) ": "; color: var(--muted); font-weight: 600; }
+  }
+  .note { background: var(--orange-soft); border-radius: 14px; padding: 14px 16px; margin: 6px 0 14px; }
+  .contact { background: var(--green); color: #fff; border-radius: 24px; padding: 28px 22px; }
+  .contact h2 { color: #fff; }
+  .contact p { opacity: .94; }
+  .contact form { display: flex; flex-direction: column; gap: 14px; margin-top: 16px; }
+  .contact label { display: flex; flex-direction: column; gap: 6px; font-weight: 600; font-size: 15px; }
+  .contact label span { font-weight: 400; opacity: .85; }
+  .contact input, .contact select, .contact textarea { font: inherit; font-weight: 400; font-size: 17px; padding: 13px 14px; border-radius: 12px; border: 2px solid transparent; background: #fff; color: #1E2A22; width: 100%; }
+  .contact textarea { resize: vertical; min-height: 120px; }
+  .contact input:focus, .contact select:focus, .contact textarea:focus { outline: none; border-color: var(--orange); }
+  .contact .hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+  .contact button { align-self: flex-start; background: #fff; color: #2F7D4F; font: inherit; font-weight: 700; font-size: 18px; padding: 15px 24px; border-radius: 14px; border: 0; cursor: pointer; }
+  .contact button:disabled { opacity: .7; cursor: default; }
+  .contact .msg { margin: 0; font-weight: 600; }
+  .contact .msg:empty { display: none; }
+  .contact .msg.err { background: var(--orange-soft); color: var(--text); padding: 10px 14px; border-radius: 12px; }
+  .contact .fine { font-size: 14px; margin: 0; }
+  footer { padding: 32px 0 44px; color: var(--muted); font-size: 14px; border-top: 1px solid var(--line); margin-top: 24px; }
+  footer .wrap { display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; max-width: 1080px; }
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="/"><img src="/icon.png" alt=""><span><span class="s">Steg</span><span class="a">Appen</span></span></a>
+    <nav><a href="/">Till startsidan</a></nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <h1>Integritetspolicy</h1>
+    <p class="updated">Gäller från 16 november 2026</p>
+    <p class="lead">StegAppen är byggd så att det mesta stannar på din telefon. Här beskriver vi vilka uppgifter appen och webbplatsen hanterar, varför, var de sparas och vilka rättigheter du har.</p>
+
+    <div class="summary">
+      <h2>Kort sammanfattning</h2>
+      <ul>
+        <li>Steg, vandringar, vikt, vatten, medicin och träning sparas <b>på din telefon</b>.</li>
+        <li>Du kan använda appen <b>utan konto</b>. Loggar du in med Apple för att använda vänfunktionerna sparas vissa uppgifter på vår server – bara det som behövs för att dina vänner ska kunna se dem.</li>
+        <li>Data från <b>Hälsa-appen</b> används bara i appen och skickas aldrig till annonsörer eller andra företag.</li>
+        <li>Vi har <b>ingen reklam, inga cookies och ingen spårning</b> för statistik eller marknadsföring.</li>
+        <li>Du kan <b>radera ditt konto</b> direkt i appen.</li>
+      </ul>
+    </div>
+
+    <nav class="toc" aria-label="Innehåll">
+      <ol>
+        <li><a href="#ansvarig">Vem som ansvarar</a></li>
+        <li><a href="#telefonen">Det som sparas på telefonen</a></li>
+        <li><a href="#halsa">Hälsa-appen</a></li>
+        <li><a href="#plats">Plats och rörelse</a></li>
+        <li><a href="#konto">Konto och vänner</a></li>
+        <li><a href="#kop">Köp i appen</a></li>
+        <li><a href="#notiser">Notiser, kamera och bilder</a></li>
+        <li><a href="#webb">Webbplatsen</a></li>
+        <li><a href="#leverantorer">Vilka som hjälper oss</a></li>
+        <li><a href="#grund">Varför vi får behandla uppgifterna</a></li>
+        <li><a href="#lagring">Hur länge uppgifterna sparas</a></li>
+        <li><a href="#rattigheter">Dina rättigheter</a></li>
+        <li><a href="#barn">Barn</a></li>
+        <li><a href="#andringar">Ändringar</a></li>
+        <li><a href="#kontakt">Kontakta oss</a></li>
+      </ol>
+    </nav>
+
+    <section id="ansvarig">
+      <h2>1. Vem som ansvarar</h2>
+      <p>Personuppgiftsansvarig för StegAppen och webbplatsen stegappen.se är <b>Thomas Borg</b>. Du når oss enklast via <a href="#kontakt">kontaktformuläret</a> längst ner på den här sidan.</p>
+    </section>
+
+    <section id="telefonen">
+      <h2>2. Det som sparas på telefonen</h2>
+      <p>Det mesta du gör i StegAppen sparas bara i appen på din telefon och lämnar den inte:</p>
+      <ul>
+        <li>steg per dag och veckans upptrappning av stegmålet</li>
+        <li>dina vandringar med spår på kartan, sträcka, tid och höjdmeter</li>
+        <li>vikt, målvikt och kroppsmått, vatten, medicin och påminnelser</li>
+        <li>träningspass, övningar och bilder du lagt till på övningarna</li>
+        <li>utrustning som skor och ryggsäckar</li>
+        <li>prestationer, och vilka städer och köpcentrum du har besökt</li>
+      </ul>
+      <p>Uppgifterna finns kvar tills du tar bort dem i appen eller avinstallerar appen. Om du använder iCloud-säkerhetskopiering kan de ingå i telefonens säkerhetskopia hos Apple.</p>
+    </section>
+
+    <section id="halsa">
+      <h2>3. Hälsa-appen (Apple Hälsa)</h2>
+      <p>Om du slår på Apple Hälsa får StegAppen läsa <b>steg, sträcka, träningspass, kroppsmått (t.ex. vikt), puls och blodtryck</b>. Det kan även komma från en Apple Watch eller andra klockor och vågar som sparar i Hälsa. Appen kan också <b>spara</b> dina vandringar, kroppsmått, puls, blodtryck och vattenintag i Hälsa.</p>
+      <p>Du väljer själv i Hälsa-appen vad StegAppen får läsa och skriva, och du kan ändra det när som helst under Hälsa → Profil → Appar → StegAppen.</p>
+      <p>Hälsodatan används bara för att visa din statistik och utveckling i appen. Den används aldrig för reklam, säljs aldrig och lämnas aldrig ut till andra företag. Det enda som kan lämna telefonen är sammanräknade värden som du delar med vänner – till exempel antal steg per vecka – och din vikt om du själv väljer att dela den med en vän (se nästa avsnitt).</p>
+    </section>
+
+    <section id="plats">
+      <h2>4. Plats och rörelse</h2>
+      <ul>
+        <li><b>Under en vandring</b> använder appen din exakta plats för att rita upp turen på kartan – även i bakgrunden när skärmen är låst, så att inspelningen fortsätter. Platsen används bara medan en tur spelas in.</li>
+        <li><b>När du använder appen</b> kan den, om du har gett platsåtkomst, högst var tionde minut kolla vilken stad eller vilket köpcentrum du är i, för prestationer som ”10 000 steg i Stockholm”. Bara namnet på staden eller köpcentret sparas, och bara på telefonen.</li>
+        <li><b>Leder i närheten</b> sorteras efter din ungefärliga position när du tittar på listan.</li>
+        <li><b>Rörelsedata</b> från telefonen används för att räkna dina steg.</li>
+      </ul>
+      <p>Du kan när som helst ändra platsåtkomsten under Inställningar → Integritet och säkerhet → Platstjänster → StegAppen.</p>
+    </section>
+
+    <section id="konto">
+      <h2>5. Konto och vänner</h2>
+      <p>Vänfunktionerna kräver att du loggar in med <b>Logga in med Apple</b>. Då sparas följande på vår server, och bara det som behövs för att du och dina vänner ska kunna se det:</p>
+      <table class="table">
+        <thead><tr><th>Uppgift</th><th>Vem ser den</th></tr></thead>
+        <tbody>
+          <tr><td>Ett id från Apple och, om Apple skickar den, e-postadressen till ditt Apple-ID (det kan vara en dold vidarebefordringsadress)</td><td data-l="Vem ser den">Ingen annan än vi. Används bara för inloggningen.</td></tr>
+          <tr><td>Visningsnamn, vänkod, vem som bjöd in dig och vilken version av appen du har</td><td data-l="Vem ser den">Namn och vänkod: dina vänner och den som har din vänlänk.</td></tr>
+          <tr><td>Profilbild, om du lägger till en</td><td data-l="Vem ser den">Du och dina vänner.</td></tr>
+          <tr><td>Vänner och vänförfrågningar</td><td data-l="Vem ser den">Du och den du är vän med.</td></tr>
+          <tr><td>Steg och poäng för veckan, statistik (t.ex. totala steg, bästa dag, antal vandringar och kilometer), prestationer, sammanfattning av dina senaste vandringar (aldrig spåret) och namn och användning för skor och ryggsäckar</td><td data-l="Vem ser den">Dina vänner, för topplistan och jämförelser.</td></tr>
+          <tr><td>Vikt, viktförändring och målvikt</td><td data-l="Vem ser den">Bara de vänner du själv väljer att dela vikten med. Inget delas om du inte slår på det.</td></tr>
+          <tr><td>”Gick tillsammans”: ett förenklat spår av dina vandringar (en position var 30:e sekund)</td><td data-l="Vem ser den">Dina vänner, och bara turer från de senaste 30 dagarna. Används för att hitta turer ni gått tillsammans. Du kan stänga av det i appen – då tas dina uppladdade spår bort.</td></tr>
+          <tr><td>Vandringar du bjuder in till: titel, tid, plats, led, meddelande, svar (Kommer, Kanske, Kommer inte) och gemensamma packlistor</td><td data-l="Vem ser den">Alla som har inbjudningslänken eller koden, och de som har svarat.</td></tr>
+        </tbody>
+      </table>
+      <p>Raderar du kontot i appen tas inloggningen bort, och med den din profil, dina vänskaper, din statistik, delad vikt, uppladdade spår och vandringar du har bjudit in till. Det du har sparat på telefonen finns kvar tills du tar bort appen.</p>
+      <p class="note">Ta gärna bort din profilbild i appen innan du raderar kontot. Vill du vara säker på att allt är borta kan du skriva till oss via <a href="#kontakt">kontaktformuläret</a>, så kontrollerar vi det.</p>
+    </section>
+
+    <section id="kop">
+      <h2>6. Köp i appen</h2>
+      <p>Köp i appen, till exempel programmet för ryggen, sköts helt av Apple via App Store. Vi får aldrig dina kortuppgifter eller ditt namn från köpet. Appen sparar bara på telefonen att köpet är gjort.</p>
+    </section>
+
+    <section id="notiser">
+      <h2>7. Notiser, kamera och bilder</h2>
+      <ul>
+        <li><b>Notiser</b> – till exempel om medicin, nya prestationer eller kommande vandringar – skapas i telefonen. Vi skickar inga notiser från en server och sparar ingen notistoken.</li>
+        <li><b>Kamera och bilder</b> används bara när du själv väljer en profilbild eller lägger till bilder på dina övningar. Övningsbilderna stannar på telefonen.</li>
+      </ul>
+    </section>
+
+    <section id="webb">
+      <h2>8. Webbplatsen</h2>
+      <ul>
+        <li>stegappen.se använder <b>inga cookies</b> och ingen statistik- eller annonsspårning.</li>
+        <li>Anmäler du dig som testare sparar vi ditt <b>namn, e-postadressen till ditt Apple-ID</b> och ett eventuellt meddelande, för att kunna bjuda in dig till testet i TestFlight.</li>
+        <li>Skriver du till oss via kontaktformuläret sparar vi namn, e-post och meddelande för att kunna svara.</li>
+        <li>Webbplatsen ligger hos GitHub Pages. Som alla webbservrar kan GitHub tillfälligt registrera tekniska uppgifter som IP-adress för säkerhet och drift.</li>
+      </ul>
+    </section>
+
+    <section id="leverantorer">
+      <h2>9. Vilka som hjälper oss</h2>
+      <p>Vi säljer aldrig personuppgifter. Vi använder några leverantörer som behandlar uppgifter för vår räkning:</p>
+      <ul>
+        <li><b>Supabase</b> – databas och inloggning för konto- och vänfunktionerna, anmälningar som testare och kontaktformuläret.</li>
+        <li><b>Apple</b> – Logga in med Apple, Hälsa-appen, App Store, köp i appen och TestFlight. Apple behandlar uppgifterna enligt sina egna villkor.</li>
+        <li><b>GitHub</b> – värd för webbplatsen stegappen.se.</li>
+      </ul>
+      <p>Några av leverantörerna kan behandla uppgifter utanför EU/EES, till exempel i USA. I så fall sker det med stöd av EU-kommissionens standardavtalsklausuler eller EU–USA-ramverket för dataskydd (Data Privacy Framework).</p>
+    </section>
+
+    <section id="grund">
+      <h2>10. Varför vi får behandla uppgifterna</h2>
+      <ul>
+        <li><b>Avtal</b> – för att kunna ge dig appens funktioner, till exempel konto, vänner och topplista.</li>
+        <li><b>Samtycke</b> – för data från Hälsa-appen, platsåtkomst, att dela vikt med vänner och för anmälan som testare. Du kan ta tillbaka samtycket när som helst i appen, i telefonens inställningar eller genom att kontakta oss.</li>
+        <li><b>Berättigat intresse</b> – för att svara på frågor, hålla tjänsten säker och förstå vilka versioner av appen som används.</li>
+      </ul>
+    </section>
+
+    <section id="lagring">
+      <h2>11. Hur länge uppgifterna sparas</h2>
+      <ul>
+        <li>Uppgifter på telefonen: tills du tar bort dem eller avinstallerar appen.</li>
+        <li>Konto- och vänuppgifter: tills du raderar kontot.</li>
+        <li>Spår för ”Gick tillsammans”: visas för vänner i 30 dagar och tas bort när du stänger av funktionen eller raderar kontot.</li>
+        <li>Anmälan som testare: tills testet är slut eller du ber oss ta bort den.</li>
+        <li>Meddelanden via kontaktformuläret: så länge det behövs för att hantera ärendet, högst 12 månader.</li>
+      </ul>
+    </section>
+
+    <section id="rattigheter">
+      <h2>12. Dina rättigheter</h2>
+      <p>Enligt dataskyddsförordningen (GDPR) har du rätt att:</p>
+      <ul>
+        <li>få veta vilka uppgifter vi har om dig och få en kopia av dem</li>
+        <li>få felaktiga uppgifter rättade</li>
+        <li>få dina uppgifter raderade</li>
+        <li>invända mot eller begära begränsning av behandlingen</li>
+        <li>få ut uppgifter du själv har lämnat i ett maskinläsbart format (dataportabilitet)</li>
+        <li>ta tillbaka ett samtycke</li>
+      </ul>
+      <p>Skriv till oss via <a href="#kontakt">kontaktformuläret</a>, så svarar vi inom en månad. Är du missnöjd med hur vi hanterar dina uppgifter kan du klaga hos <a href="https://www.imy.se/" rel="noopener">Integritetsskyddsmyndigheten (IMY)</a>.</p>
+    </section>
+
+    <section id="barn">
+      <h2>13. Barn</h2>
+      <p>Vänfunktionerna som kräver konto är inte avsedda för barn under 13 år. Har ett barn under 13 år skapat ett konto utan en vårdnadshavares medgivande, kontakta oss så tar vi bort det.</p>
+    </section>
+
+    <section id="andringar">
+      <h2>14. Ändringar</h2>
+      <p>Om appen ändras så att vi hanterar uppgifter på ett nytt sätt uppdaterar vi den här sidan och datumet högst upp. Större ändringar berättar vi om i appen.</p>
+    </section>
+
+    <section id="kontakt" class="contact">
+      <h2>15. Kontakta oss</h2>
+      <p>Har du frågor om dina uppgifter, vill få ut en kopia eller vill att vi raderar något? Skriv här så svarar vi till din e-post.</p>
+      <form id="kontaktform" novalidate>
+        <input type="text" name="hemsida" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <label>Namn<input name="namn" required maxlength="80" autocomplete="name"></label>
+        <label>Din e-post<input name="epost" type="email" required maxlength="254" autocomplete="email" inputmode="email" placeholder="namn@exempel.se"></label>
+        <label>Ärende
+          <select name="amne">
+            <option value="fraga">Fråga om mina uppgifter</option>
+            <option value="utdrag">Jag vill få en kopia av mina uppgifter</option>
+            <option value="radering">Jag vill att mina uppgifter raderas</option>
+            <option value="rattelse">Jag vill rätta en uppgift</option>
+            <option value="ovrigt">Övrigt</option>
+          </select>
+        </label>
+        <label>Meddelande<textarea name="meddelande" required maxlength="3000" rows="5" placeholder="Skriv gärna vilket namn du har i appen."></textarea></label>
+        <button type="submit">Skicka</button>
+        <p class="msg" role="status" aria-live="polite"></p>
+        <p class="fine">Vi använder bara uppgifterna för att svara på ditt meddelande.</p>
+      </form>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="brand"><b><span class="s">Steg</span><span class="a">Appen</span></b> – gå mer, tillsammans.</span>
+    <span>© 2026 StegAppen · <a href="/">Startsidan</a></span>
+  </div>
+</footer>
+<script>
+(function () {
+  // Publik (publishable) nyckel – samma som i appen. Tabellen tar bara emot nya meddelanden och går inte att läsa.
+  var API = "https://qakfrmfikyivjgmvjoda.supabase.co/rest/v1/kontaktmeddelanden";
+  var KEY = "sb_publishable_6jpqlNFNDgvZHiwgSIkpLQ_JWBoPD54";
+  var form = document.getElementById("kontaktform");
+  if (!form) return;
+  var msg = form.querySelector(".msg"), btn = form.querySelector("button");
+  function show(t, err) { msg.textContent = t; msg.className = "msg" + (err ? " err" : ""); }
+  function done(t) { form.innerHTML = '<p style="font-size:40px;margin:0">✉️</p><h3 style="margin:0;color:inherit;font-size:22px">Tack för ditt meddelande!</h3><p style="margin:0"></p>'; form.lastChild.textContent = t; }
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    if (form.hemsida.value) { done("Vi hör av oss."); return; }
+    var namn = form.namn.value.trim(), epost = form.epost.value.trim(), meddelande = form.meddelande.value.trim(), amne = form.amne.value;
+    if (!namn) { show("Skriv ditt namn.", true); form.namn.focus(); return; }
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(epost)) { show("Kontrollera e-postadressen.", true); form.epost.focus(); return; }
+    if (!meddelande) { show("Skriv ett meddelande.", true); form.meddelande.focus(); return; }
+    btn.disabled = true; show("Skickar …");
+    fetch(API, { method: "POST", headers: { apikey: KEY, "Content-Type": "application/json", Prefer: "return=minimal" }, body: JSON.stringify({ namn: namn, epost: epost, amne: amne, meddelande: meddelande }) })
+      .then(function (r) { if (!r.ok) throw new Error(r.status); done("Vi svarar till " + epost + " så snart vi kan, senast inom en månad."); })
+      .catch(function () { btn.disabled = false; show("Det gick inte att skicka just nu. Försök igen om en stund.", true); });
+  });
+})();
+</script>
+</body>
+</html>
