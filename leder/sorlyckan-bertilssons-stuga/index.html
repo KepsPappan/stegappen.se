@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sörlyckan – Bertilssons stuga · 3,3 km vandringsled i Göteborg | StegAppen</title>
+<meta name="description" content="Sörlyckan – Bertilssons stuga är en 3,3 km lång vandringsled i Göteborg. Se karta, start, längd och tid – och bocka av leden automatiskt med StegAppen.">
+<meta name="theme-color" content="#2F7D4F">
+<link rel="canonical" href="https://stegappen.se/leder/sorlyckan-bertilssons-stuga/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="StegAppen">
+<meta property="og:title" content="Sörlyckan – Bertilssons stuga · 3,3 km i Göteborg">
+<meta property="og:description" content="Karta, längd och start för leden – och gå den med StegAppen.">
+<meta property="og:image" content="https://stegappen.se/img/og.png">
+<link rel="icon" href="/icon.png">
+<link rel="apple-touch-icon" href="/icon.png">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TouristAttraction",
+  "name": "Sörlyckan – Bertilssons stuga",
+  "description": "Vandringsled i Göteborg, 3,3 km.",
+  "url": "https://stegappen.se/leder/sorlyckan-bertilssons-stuga/",
+  "geo": { "@type": "GeoCoordinates", "latitude": 57.71065, "longitude": 12.08537 },
+  "isAccessibleForFree": true
+}
+</script>
+<style>
+  :root {
+    --bg: #F4F6F1; --surface: #FFFFFF; --text: #1E2A22; --muted: #5F6E64; --line: #E3E8E0;
+    --green: #2F7D4F; --green-soft: #DCEFE2; --orange: #E08A2C; --orange-soft: #FBEBD6;
+    --on-green: #FFFFFF; --shadow: 0 1px 2px rgba(30,42,34,.06), 0 8px 24px rgba(30,42,34,.06);
+  }
+  * { box-sizing: border-box; }
+  html { color-scheme: light; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 17px/1.55 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif; overflow-x: hidden; }
+  a { color: var(--green); }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 16px; }
+  .brand .s { color: var(--green); } .brand .a { color: var(--orange); }
+  header.top { position: sticky; top: 0; z-index: 1000; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: saturate(1.4) blur(12px); -webkit-backdrop-filter: saturate(1.4) blur(12px); border-bottom: 1px solid var(--line); }
+  header.top .wrap { display: flex; align-items: center; gap: 10px; height: 60px; }
+  header.top img { width: 34px; height: 34px; border-radius: 9px; background: #fff; }
+  header.top .brand { font-weight: 700; font-size: 20px; letter-spacing: -.2px; text-decoration: none; display: flex; align-items: center; gap: 10px; }
+  header.top nav { margin-left: auto; display: flex; gap: 20px; align-items: center; }
+  header.top nav a.link { color: var(--muted); text-decoration: none; font-size: 15px; }
+  @media (max-width: 640px) { header.top nav a.link { display: none; } }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: var(--green); color: var(--on-green); text-decoration: none; font-weight: 600; padding: 14px 22px; border-radius: 14px; font-size: 17px; border: 0; }
+  .btn.small { padding: 9px 16px; font-size: 15px; border-radius: 11px; }
+  .btn.ghost { background: transparent; color: var(--green); box-shadow: inset 0 0 0 2px var(--green); }
+
+  .crumbs { font-size: 14px; color: var(--muted); margin: 22px 0 10px; }
+  .crumbs a { color: var(--muted); text-decoration: none; } .crumbs a:hover { color: var(--green); }
+  .eyebrow { display: inline-block; background: var(--orange-soft); color: var(--orange); font-weight: 600; font-size: 14px; padding: 6px 12px; border-radius: 999px; }
+  h1 { font-size: clamp(32px, 5.5vw, 52px); line-height: 1.08; letter-spacing: -1px; margin: 14px 0 10px; }
+  .lead { font-size: 19px; color: var(--muted); margin: 0 0 24px; max-width: 38em; }
+
+  .layout { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 24px; align-items: start; }
+  @media (max-width: 860px) { .layout { grid-template-columns: 1fr; } }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 20px; padding: 22px; box-shadow: var(--shadow); }
+  #map { height: 460px; border-radius: 20px; border: 1px solid var(--line); box-shadow: var(--shadow); z-index: 0; }
+  @media (max-width: 640px) { #map { height: 340px; } }
+  .legend { display: flex; gap: 18px; font-size: 14px; color: var(--muted); margin: 10px 4px 0; flex-wrap: wrap; }
+  .dot { display: inline-block; width: 12px; height: 12px; border-radius: 50%; margin-right: 6px; vertical-align: -1px; }
+
+  .facts { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin: 24px 0; }
+  @media (max-width: 640px) { .facts { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  .fact { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 16px; }
+  .fact b { display: block; font-size: 26px; letter-spacing: -.5px; }
+  .fact span { color: var(--muted); font-size: 14px; }
+
+  h2 { font-size: 26px; letter-spacing: -.5px; margin: 34px 0 10px; }
+  .about p { margin: 0 0 12px; max-width: 40em; }
+
+  .side { display: grid; gap: 16px; position: sticky; top: 80px; }
+  @media (max-width: 860px) { .side { position: static; } }
+  .app h3 { margin: 0 0 6px; font-size: 20px; }
+  .app p { margin: 0 0 14px; color: var(--muted); font-size: 15px; }
+  .ach { display: flex; gap: 12px; align-items: center; background: var(--orange-soft); border-radius: 14px; padding: 12px 14px; margin-bottom: 16px; }
+  .ach .ic { font-size: 26px; }
+  .ach b { display: block; font-size: 15px; } .ach span { font-size: 13px; color: var(--muted); }
+  .ach .p { margin-left: auto; color: var(--orange); font-weight: 700; }
+  .app ul { margin: 0 0 16px; padding: 0; list-style: none; font-size: 15px; }
+  .app li { padding: 5px 0 5px 26px; position: relative; }
+  .app li::before { content: "✓"; position: absolute; left: 2px; color: var(--green); font-weight: 700; }
+  .app .btn { width: 100%; }
+  .start p { margin: 0 0 12px; font-size: 15px; color: var(--muted); }
+  .start .btn { width: 100%; margin-top: 8px; }
+
+  .near { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 14px; }
+  .near a { text-decoration: none; color: var(--text); }
+  .near .card { padding: 16px 18px; height: 100%; transition: transform .15s; }
+    .near b { display: block; margin-bottom: 4px; }
+  .near span { color: var(--muted); font-size: 14px; }
+
+  footer { margin-top: 56px; border-top: 1px solid var(--line); padding: 26px 0 40px; color: var(--muted); font-size: 14px; }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="/"><img src="/icon.png" alt=""><span><span class="s">Steg</span><span class="a">Appen</span></span></a>
+    <nav>
+      <a class="link" href="/#funktioner">Funktioner</a>
+      <a class="btn small" href="/#kom-igang">Kom igång</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="crumbs"><a href="/">StegAppen</a> › Leder › Göteborg › Sörlyckan – Bertilssons stuga</div>
+  <span class="eyebrow">Vandringsled · Göteborg</span>
+  <h1>Sörlyckan – Bertilssons stuga</h1>
+  <p class="lead">En 3,3 km lång vandringsled från Sörlyckan i Sävedalen söderut genom Knipeflågsbergens naturreservat till Bertilssons stuga i Björkekärr, på gränsen mellan Partille och Göteborg. Lagom för en kvällspromenad eller en lugn söndagstur.</p>
+
+  <div class="layout">
+    <div>
+      <div id="map" role="img" aria-label="Karta över leden Sörlyckan – Bertilssons stuga"></div>
+      <div class="legend">
+        <span><i class="dot" style="background:var(--green)"></i>Leden</span>
+        <span><i class="dot" style="background:var(--green);box-shadow:0 0 0 3px #fff, 0 0 0 5px var(--green)"></i>Start</span>
+        <span><i class="dot" style="background:var(--orange)"></i>Mål</span>
+      </div>
+
+      <div class="facts">
+        <div class="fact"><b>3,3 km</b><span>Längd</span></div>
+        <div class="fact"><b>≈ 4 400</b><span>Steg</span></div>
+        <div class="fact"><b>≈ 50 min</b><span>I lugnt tempo</span></div>
+        <div class="fact"><b>A → B</b><span>Enkel väg</span></div>
+      </div>
+
+      <section class="about">
+        <h2>Om leden</h2>
+        <p>Leden går mellan Sörlyckan i Sävedalen och Bertilssons stuga i Björkekärr i östra Göteborg. På vägen passerar den genom Knipeflågsbergens naturreservat, strax öster om Stora Delsjön. Leden är 3,3 km lång och har röd-vit ledmarkering.</p>
+        <p>Leden går från punkt till punkt, så tänk på hur du tar dig tillbaka – gå samma väg tillbaka (6,6 km totalt) eller kolla kollektivtrafiken från målet. Leder i närheten, som Ugglemossen runt och Bohusleden vid Skatås, går att koppla ihop med turen om du vill gå längre.</p>
+      </section>
+
+      <h2>Fler leder i närheten</h2>
+      <div class="near">
+        <div><div class="card"><b>Ugglemossen runt</b><span>4,8 km · 0,9 km bort</span></div></div>
+        <div><div class="card"><b>Bohusleden etapp 3: Skatås – Kåsjön</b><span>10 km · 1,2 km bort</span></div></div>
+        <div><div class="card"><b>Kåsjörundan</b><span>7,5 km · 2,6 km bort</span></div></div>
+        <div><div class="card"><b>Prästtjärn runt</b><span>2,8 km · 3,3 km bort</span></div></div>
+      </div>
+    </div>
+
+    <aside class="side">
+      <div class="card app">
+        <h3>Gå leden med StegAppen</h3>
+        <p>Appen känner igen leden när du går den – du behöver inte välja något innan.</p>
+        <div class="ach">
+          <span class="ic">🧭</span>
+          <div><b>Sörlyckan – Bertilssons stuga</b><span>Prestation när hela leden är gången</span></div>
+          <span class="p">22 p</span>
+        </div>
+        <ul>
+          <li>Leden bockas av automatiskt</li>
+          <li>Se hur stor del du har gått</li>
+          <li>Steg, sträcka och höjdmeter för turen</li>
+          <li>Jämför med dina vänner</li>
+        </ul>
+        <a class="btn" href="/#kom-igang">Ladda ner StegAppen</a>
+      </div>
+      <div class="card start">
+        <h3 style="margin:0 0 6px;font-size:18px">Hitta till starten</h3>
+        <p>Leden startar vid Sörlyckan i Sävedalen, Partille, och slutar vid Bertilssons stuga i Björkekärr. Du kan också gå den åt andra hållet.</p>
+        <a class="btn ghost small" id="apple" href="#">Öppna i Apple Kartor</a>
+        <a class="btn ghost small" id="google" href="#">Öppna i Google Maps</a>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    Leddata © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap-bidragsgivare</a> (ODbL) ·
+    <a href="https://www.openstreetmap.org/relation/8012664">Leden i OpenStreetMap</a> ·
+    <a href="/integritet/">Integritet</a>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+  var LINES = [[[57.71065,12.08537],[57.70973,12.08538],[57.7096,12.08541],[57.70931,12.08556],[57.70923,12.0856],[57.70908,12.08564],[57.70876,12.08563],[57.70861,12.08559],[57.7083,12.08545],[57.70814,12.0854],[57.70804,12.08542],[57.70791,12.08549],[57.70787,12.08549],[57.7078,12.08549],[57.70772,12.08541],[57.70768,12.08535],[57.70754,12.08512],[57.70724,12.08475],[57.70711,12.08466],[57.70699,12.08466],[57.70678,12.08471],[57.70672,12.08474],[57.70653,12.08484],[57.70642,12.08487],[57.70635,12.08485],[57.70596,12.08456],[57.7059,12.08449],[57.70577,12.08428],[57.70551,12.08391],[57.70528,12.08365],[57.705,12.08314],[57.70496,12.0831],[57.7049,12.08303],[57.70478,12.08299],[57.70472,12.083],[57.70465,12.08306],[57.7046,12.08317],[57.70452,12.08343],[57.70447,12.08351],[57.7044,12.08356],[57.70428,12.08354],[57.70409,12.08339],[57.70398,12.08334],[57.70383,12.08332],[57.70371,12.08339],[57.70356,12.08359],[57.70346,12.08368],[57.7034,12.0837],[57.70326,12.0837],[57.70323,12.08366],[57.70294,12.0833],[57.70276,12.08317],[57.70267,12.08317],[57.70253,12.0829],[57.70239,12.08273],[57.70227,12.08265],[57.70208,12.08259],[57.70172,12.08241],[57.7016,12.08238],[57.70129,12.08241],[57.70106,12.08247],[57.70072,12.08241],[57.70019,12.08254],[57.69985,12.08253],[57.69952,12.08255],[57.69918,12.08267],[57.69907,12.08274],[57.69888,12.08293],[57.69862,12.08311],[57.69815,12.08324],[57.69781,12.0833],[57.6977,12.0833],[57.69757,12.08326],[57.69745,12.08317],[57.69735,12.08313],[57.697,12.08311],[57.69693,12.08315],[57.69686,12.08323],[57.69675,12.08346],[57.69654,12.08383]],[[57.69654,12.08383],[57.69643,12.08402],[57.69628,12.08405],[57.69624,12.08412],[57.69617,12.0842],[57.69617,12.08422],[57.69611,12.08438],[57.69606,12.08468],[57.69601,12.08477],[57.69596,12.08487],[57.6959,12.08501],[57.69583,12.08508],[57.69575,12.08517],[57.69565,12.08529],[57.69534,12.08537]],[[57.69534,12.08537],[57.69524,12.08542],[57.69502,12.08548],[57.69491,12.08543],[57.69484,12.08544],[57.69479,12.08556],[57.69474,12.0856],[57.69465,12.08554],[57.69453,12.08556],[57.69443,12.08551],[57.69435,12.08553],[57.69405,12.08559],[57.69395,12.08563],[57.69382,12.08573],[57.69379,12.08579],[57.69377,12.08584],[57.69365,12.08593],[57.69355,12.08596],[57.69344,12.08601],[57.69335,12.08593],[57.69319,12.08601],[57.69288,12.08614],[57.69233,12.08611],[57.69203,12.08615],[57.6919,12.08614],[57.69153,12.08604],[57.69141,12.08607],[57.6912,12.08619],[57.69102,12.08637],[57.69074,12.08663],[57.69065,12.0868],[57.69063,12.08682],[57.69052,12.08689],[57.69039,12.08699],[57.69028,12.08689],[57.69017,12.0868],[57.69014,12.08677],[57.68998,12.08656],[57.68995,12.08652],[57.68979,12.08635],[57.68973,12.08628],[57.68958,12.08616],[57.68951,12.08613],[57.68947,12.08611],[57.68924,12.08605],[57.68912,12.08602],[57.68895,12.08607],[57.68885,12.08595],[57.68875,12.08597],[57.68863,12.08611],[57.68834,12.08659],[57.68803,12.08686],[57.6879,12.08706],[57.68788,12.0872],[57.68783,12.08746],[57.68773,12.08833],[57.68767,12.08855],[57.68757,12.08868],[57.68751,12.08873],[57.68731,12.08879],[57.68717,12.08888],[57.68711,12.08895],[57.68696,12.08918],[57.68687,12.08937],[57.68668,12.09011],[57.6866,12.09024],[57.68646,12.09035],[57.6864,12.09042],[57.68633,12.09072]],[[57.68633,12.09072],[57.68621,12.09073],[57.68617,12.09057]],[[57.68617,12.09057],[57.68616,12.09048],[57.68612,12.09039],[57.68608,12.09011],[57.68602,12.08984],[57.6859,12.08953],[57.6858,12.08933],[57.68578,12.08914],[57.68573,12.08906],[57.68567,12.08901]],[[57.68567,12.08901],[57.68557,12.08898],[57.68545,12.08895]],[[57.68545,12.08895],[57.68543,12.08881],[57.68533,12.08838],[57.68521,12.08805],[57.68515,12.08801]],[[57.68515,12.08801],[57.6851,12.08796]],[[57.6851,12.08796],[57.68495,12.0878]]];
+  var START = [57.71065, 12.08537], END = [57.68495, 12.0878];
+  var map = L.map('map', { scrollWheelZoom: false });
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 18, attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+  }).addTo(map);
+  var route = L.polyline(LINES, { color: '#2F7D4F', weight: 6, opacity: .95, lineJoin: 'round' }).addTo(map);
+  L.circleMarker(START, { radius: 9, color: '#fff', weight: 3, fillColor: '#2F7D4F', fillOpacity: 1 }).addTo(map).bindTooltip('Start');
+  if (END) L.circleMarker(END, { radius: 9, color: '#fff', weight: 3, fillColor: '#E08A2C', fillOpacity: 1 }).addTo(map).bindTooltip('Mål');
+  map.fitBounds(route.getBounds(), { padding: [30, 30] });
+  var ll = START[0] + ',' + START[1];
+  document.getElementById('apple').href = 'https://maps.apple.com/?daddr=' + ll + '&dirflg=w';
+  document.getElementById('google').href = 'https://www.google.com/maps/dir/?api=1&destination=' + ll + '&travelmode=walking';
+</script>
+</body>
+</html>
