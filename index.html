@@ -146,6 +146,22 @@
   .grid .card .ic { width: 36px; height: 36px; border-radius: 10px; font-size: 19px; margin: 2px 0 0; grid-row: span 2; }
   .grid .card h3 { font-size: 16.5px; margin: 0 0 2px; }
   .grid .card p { font-size: 14.5px; line-height: 1.45; }
+  .shot.mock { box-sizing: border-box; border: 8px solid #111; border-radius: 34px; box-shadow: 0 24px 48px rgba(30,42,34,.16); aspect-ratio: 1206 / 2150; background: var(--bg); overflow: hidden; padding: 3% 4%; display: flex; flex-direction: column; container-type: inline-size; }
+  .mock .m-status { display: flex; justify-content: space-between; font-size: 4.2cqw; padding: 0 3cqw 2cqw; color: var(--text); }
+  .mock .m-status span { font-size: 2.8cqw; letter-spacing: .3cqw; opacity: .8; }
+  .mock .m-top { display: flex; justify-content: space-between; align-items: center; padding: 1cqw 1cqw 3.4cqw; }
+  .mock .m-title { font-weight: 800; font-size: 8.2cqw; letter-spacing: -.1cqw; }
+  .mock .m-pill { background: var(--green-soft); color: var(--green); font-size: 3.8cqw; font-weight: 700; padding: 1.3cqw 3cqw; border-radius: 999px; }
+  .mock .trails { width: 100%; padding: .6cqw 4cqw 3.4cqw; border-radius: 5.5cqw; box-shadow: none; }
+  .mock .trails-head { font-size: 5.6cqw; padding: 4cqw 0 2.4cqw; }
+  .mock .trail { font-size: 5cqw; padding: 3.5cqw 0; gap: 2.7cqw; line-height: 1.3; }
+  .mock .trail small { font-size: 4.2cqw; }
+  .mock .trails-more { font-size: 5.2cqw; padding-top: 3.4cqw; }
+  .mock .m-tabs { margin: auto -4cqw -3cqw; display: flex; justify-content: space-around; border-top: 1px solid var(--line); background: var(--surface); padding: 2.4cqw 1cqw 4cqw; font-size: 5.2cqw; }
+  .mock .m-tabs span { display: flex; flex-direction: column; align-items: center; gap: .6cqw; filter: grayscale(1); opacity: .6; }
+  .mock .m-tabs span.on { filter: none; opacity: 1; }
+  .mock .m-tabs i { font-style: normal; font-size: 2.6cqw; font-weight: 600; color: var(--muted); }
+  .mock .m-tabs span.on i { color: var(--orange); }
 </style>
 </head>
 <body>
@@ -279,16 +295,21 @@
             <li>Gemensamma packlistor och vem som tar med vad</li>
           </ul>
         </div>
-        <div class="trails card">
-          <div class="trails-head">🗺️ Några av lederna</div>
-          <div class="trail"><span>Kungsleden: Abisko – Abiskojaure</span><small>Lappland</small></div>
-          <div class="trail"><span>Sörmlandsleden etapp 4</span><small>Stockholm</small></div>
-          <div class="trail"><span>Bohusleden: Angereds kyrka – Fontin</span><small>Göteborg</small></div>
-          <div class="trail"><span>Vildmarksleden: Hindås – Skatås</span><small>Göteborg</small></div>
-          <div class="trail"><span>Upplandsleden etapp 2</span><small>Stockholm</small></div>
-          <div class="trail"><span>Ostkustleden: Lönnhult – Krokstorp</span><small>Småland</small></div>
-          <div class="trail"><span>Trehörningen runt</span><small>Huddinge</small></div>
-          <div class="trails-more">+ 71 till</div>
+        <div class="shot mock" role="img" aria-label="Listan med vandringsleder i StegAppen">
+          <div class="m-status"><b>9:41</b><span>●●● ▲ ▮</span></div>
+          <div class="m-top"><span class="m-title">Vandringar</span><span class="m-pill">78 leder</span></div>
+          <div class="trails card">
+            <div class="trails-head">🗺️ Några av lederna</div>
+            <div class="trail"><span>Kungsleden: Abisko – Abiskojaure</span><small>Lappland</small></div>
+            <div class="trail"><span>Sörmlandsleden etapp 4</span><small>Stockholm</small></div>
+            <div class="trail"><span>Bohusleden: Angereds kyrka – Fontin</span><small>Göteborg</small></div>
+            <div class="trail"><span>Vildmarksleden: Hindås – Skatås</span><small>Göteborg</small></div>
+            <div class="trail"><span>Upplandsleden etapp 2</span><small>Stockholm</small></div>
+            <div class="trail"><span>Ostkustleden: Lönnhult – Krokstorp</span><small>Småland</small></div>
+            <div class="trail"><span>Trehörningen runt</span><small>Huddinge</small></div>
+            <div class="trails-more">+ 71 till</div>
+          </div>
+          <div class="m-tabs" aria-hidden="true"><span>👣<i>Idag</i></span><span>🥾<i>Vandra</i></span><span class="on">🗺️<i>Vandringar</i></span><span>🏆<i>Prestationer</i></span><span>📊<i>Statistik</i></span></div>
         </div>
       </div>
 
@@ -383,7 +404,7 @@
       </div>
       <div class="privacy">
         <div class="card"><div class="ic">📱</div><h3>Sparas på telefonen</h3><p>Steg, vandringar, vikt, medicin och träning sparas på din telefon. Du väljer själv i Hälsa-appen vad StegAppen får läsa.</p></div>
-        <div class="card o"><div class="ic">🤝</div><h3>Du väljer vad du delar</h3><p>Vänner ser dina veckosteg, prestationer och statistik. Din vikt och kartan över dina turer delar du bara om du själv slår på det.</p></div>
+        <div class="card o"><div class="ic">🤝</div><h3>Du väljer vad du delar</h3><p>Vänner ser dina veckosteg, prestationer och statistik. Din vikt ser bara de vänner du själv väljer, och delningen av dina turer kan du stänga av.</p></div>
         <div class="card"><div class="ic">🗑️</div><h3>Ta bort när du vill</h3><p>Sluta dela, ta bort vänner eller radera ditt konto – direkt i appen.</p></div>
       </div>
     </div>
