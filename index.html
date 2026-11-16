@@ -138,9 +138,9 @@
   .health ul { margin: 0; padding-left: 20px; font-size: 16px; }
   .health li { margin: 4px 0; }
   @media (max-width: 640px) { .health { padding: 20px; } .health-head { flex-direction: column; gap: 12px; } .health-cols { grid-template-columns: 1fr; } }
-  .watch { margin: 0 auto 18px; max-width: 300px; }
+  .watch { margin: 0 auto 18px; max-width: 380px; }
   .watch svg { display: block; width: 100%; height: auto; }
-  @media (min-width: 861px) { .health { display: grid; grid-template-columns: 280px 1fr; column-gap: 32px; align-items: center; } .watch { grid-row: 1 / span 2; margin: 0; } .health-cols { grid-column: 2; } }
+  @media (min-width: 861px) { .health { display: grid; grid-template-columns: 340px 1fr; column-gap: 32px; align-items: center; } .watch { grid-row: 1 / span 2; margin: 0; } .health-cols { grid-column: 2; } }
   .grid { gap: 12px; }
   .grid .card { padding: 14px 16px; border-radius: 16px; display: grid; grid-template-columns: 36px 1fr; column-gap: 12px; align-items: start; }
   .grid .card .ic { width: 36px; height: 36px; border-radius: 10px; font-size: 19px; margin: 2px 0 0; grid-row: span 2; }
@@ -206,8 +206,8 @@
       </div>
       <div class="health">
         <figure class="watch" aria-label="Illustration: en klocka visar steg och puls som hamnar i StegAppen">
-          <svg viewBox="0 0 300 200" role="img" xmlns="http://www.w3.org/2000/svg">
-            <title>Steg och puls från klockan hamnar i StegAppen</title>
+          <svg viewBox="0 0 400 200" role="img" xmlns="http://www.w3.org/2000/svg">
+            <title>Steg och puls från klockan går via Hälsa-appen till StegAppen</title>
             <rect x="58" y="4" width="64" height="44" rx="14" fill="#2B2F2C"/>
             <rect x="58" y="152" width="64" height="44" rx="14" fill="#2B2F2C"/>
             <rect x="36" y="34" width="108" height="132" rx="34" fill="#1B1D1C"/>
@@ -219,10 +219,21 @@
             <text x="90" y="86" text-anchor="middle" font-family="-apple-system,Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#fff">8 214</text>
             <text x="90" y="99" text-anchor="middle" font-family="-apple-system,Helvetica,Arial,sans-serif" font-size="8" fill="#A2AFA6">steg</text>
             <text x="90" y="138" text-anchor="middle" font-family="-apple-system,Helvetica,Arial,sans-serif" font-size="12" font-weight="600" fill="#FF5A67">♥ 72</text>
-            <path d="M168 100 h56" stroke="#E08A2C" stroke-width="5" stroke-linecap="round" stroke-dasharray="2 12"/>
-            <path d="M222 90 l12 10 l-12 10" fill="none" stroke="#E08A2C" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-            <rect x="244" y="74" width="52" height="52" rx="14" fill="#2F7D4F"/>
-            <text x="270" y="108" text-anchor="middle" font-size="24">👣</text>
+            <defs>
+              <linearGradient id="hj" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FF6482"/><stop offset="1" stop-color="#FF2D55"/></linearGradient>
+              <clipPath id="ikon"><rect x="320" y="72" width="56" height="56" rx="14"/></clipPath>
+            </defs>
+            <path d="M164 100 h28" stroke="#E08A2C" stroke-width="5" stroke-linecap="round" stroke-dasharray="2 11"/>
+            <path d="M194 92 l9 8 l-9 8" fill="none" stroke="#E08A2C" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+            <rect x="214" y="72" width="56" height="56" rx="14" fill="#fff" stroke="#E3E8E0" stroke-width="1.5"/>
+            <path d="M242 117 C228 107 223 99 227 91.5 C231 84.5 239 86 242 92 C245 86 253 84.5 257 91.5 C261 99 256 107 242 117 Z" fill="url(#hj)"/>
+            <text x="242" y="148" text-anchor="middle" font-family="-apple-system,Helvetica,Arial,sans-serif" font-size="12" font-weight="600" fill="#5F6E64">Hälsa</text>
+            <path d="M280 100 h22" stroke="#E08A2C" stroke-width="5" stroke-linecap="round" stroke-dasharray="2 11"/>
+            <path d="M302 92 l9 8 l-9 8" fill="none" stroke="#E08A2C" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+            <rect x="320" y="72" width="56" height="56" rx="14" fill="#fff"/>
+            <image href="icon.png" x="320" y="72" width="56" height="56" clip-path="url(#ikon)"/>
+            <rect x="320" y="72" width="56" height="56" rx="14" fill="none" stroke="#E3E8E0" stroke-width="1.5"/>
+            <text x="348" y="148" text-anchor="middle" font-family="-apple-system,Helvetica,Arial,sans-serif" font-size="12" font-weight="600" fill="#5F6E64">StegAppen</text>
           </svg>
         </figure>
         <div class="health-head">
