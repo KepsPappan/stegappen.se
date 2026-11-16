@@ -169,7 +169,7 @@ out = f'''<!doctype html>
   <div class="wrap">
     <div class="crumbs"><a href="/">StegAppen</a> › Leder</div>
     <h1>Vandringsleder</h1>
-    <p class="lead">{n} leder finns inbyggda i StegAppen – från Kungsleden i Abisko till Bohusleden, Sörmlandsleden och Huddingeleden. Appen känner igen leden när du går den och bockar av den automatiskt.</p>
+    <p class="lead">{n} leder finns inbyggda i StegAppen – från Kungsleden i Abisko till Bohusleden, Sörmlandsleden och Huddingeleden. Starta en vandring i appen när du går – appen känner igen leden själv och bockar av den automatiskt.</p>
     <nav class="chips" aria-label="Områden">
 {chips}
     </nav>
