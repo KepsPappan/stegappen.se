@@ -192,7 +192,9 @@
   .start .btn { width: 100%; margin-top: 8px; }
   .fika { background: var(--orange-soft); border-color: transparent; }
   .fika p { margin: 0 0 12px; font-size: 15px; color: var(--text); }
-  .fika .btn { width: 100%; }
+  .fika { margin: 28px 0 0; }
+  .nearby { margin: 36px 0 8px; }
+  .fika .btn { width: auto; }
 
   .near { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 14px; }
   .near a { text-decoration: none; color: var(--text); }
@@ -247,13 +249,12 @@
         <p>Leden går från punkt till punkt, så tänk på hur du tar dig tillbaka – gå samma väg tillbaka (6,6 km totalt) eller kolla kollektivtrafiken från målet. Leder i närheten, som Ugglemossen runt och Bohusleden vid Skatås, går att koppla ihop med turen om du vill gå längre.</p>
       </section>
 
-      <h2>Fler leder i närheten</h2>
-      <div class="near">
-        <div><div class="card"><b>Ugglemossen runt</b><span>4,8 km · 0,9 km bort</span></div></div>
-        <div><div class="card"><b>Bohusleden etapp 3: Skatås – Kåsjön</b><span>10 km · 1,2 km bort</span></div></div>
-        <div><div class="card"><b>Kåsjörundan</b><span>7,5 km · 2,6 km bort</span></div></div>
-        <div><div class="card"><b>Prästtjärn runt</b><span>2,8 km · 3,3 km bort</span></div></div>
+      <div class="card fika">
+        <h2 style="margin:0 0 6px;font-size:22px">☕ Fika vid målet</h2>
+        <p>Bertilssons stuga, där leden slutar, är ett kafé med fika och lunch. Öppettiderna varierar – kolla innan du går.</p>
+        <a class="btn ghost small" href="https://www.google.com/maps/search/?api=1&amp;query=Bertilssons+stuga+Delsj%C3%B6k%C3%A4rrv%C3%A4gen+26+G%C3%B6teborg" rel="noopener">Öppettider i Google Maps</a>
       </div>
+
 
       <section class="faq">
         <h2>Vanliga frågor om leden</h2>
@@ -282,11 +283,6 @@
         </ul>
         <a class="btn" href="/#kom-igang">Testa StegAppen gratis</a>
       </div>
-      <div class="card fika">
-        <h3 style="margin:0 0 6px;font-size:18px">☕ Fika vid målet</h3>
-        <p>Bertilssons stuga, där leden slutar, är ett kafé med fika och lunch. Öppettiderna varierar – kolla innan du går.</p>
-        <a class="btn ghost small" href="https://www.google.com/maps/search/?api=1&amp;query=Bertilssons+stuga+Delsj%C3%B6k%C3%A4rrv%C3%A4gen+26+G%C3%B6teborg" rel="noopener">Öppettider i Google Maps</a>
-      </div>
       <div class="card start">
         <h3 style="margin:0 0 6px;font-size:18px">Hitta till starten</h3>
         <p>Leden startar vid Sörlyckan i Sävedalen, Partille, och slutar vid Bertilssons stuga i Björkekärr. Du kan också gå den åt andra hållet.</p>
@@ -295,6 +291,16 @@
       </div>
     </aside>
   </div>
+
+  <section class="nearby">
+    <h2>Fler leder i närheten</h2>
+    <div class="near">
+      <div><div class="card"><b>Ugglemossen runt</b><span>4,8 km · 0,9 km bort</span></div></div>
+      <div><div class="card"><b>Bohusleden etapp 3: Skatås – Kåsjön</b><span>10 km · 1,2 km bort</span></div></div>
+      <div><div class="card"><b>Kåsjörundan</b><span>7,5 km · 2,6 km bort</span></div></div>
+      <div><div class="card"><b>Prästtjärn runt</b><span>2,8 km · 3,3 km bort</span></div></div>
+    </div>
+  </section>
 </main>
 
 <footer>
