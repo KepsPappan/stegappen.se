@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>StegAppen – gå mer, tillsammans</title>
+<meta name="description" content="StegAppen gör varje steg roligare: smarta stegmål, 78 vandringsleder, hundratals prestationer och topplista med vänner. Testa gratis på iPhone.">
+<meta name="theme-color" content="#2F7D4F">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="StegAppen">
+<meta property="og:title" content="StegAppen – gå mer, tillsammans">
+<meta property="og:description" content="Smarta stegmål, vandringsleder, hundratals prestationer och topplista med vänner. Testa gratis på iPhone.">
+<meta property="og:url" content="https://stegappen.se/">
+<meta property="og:image" content="https://stegappen.se/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/icon.png">
+<link rel="apple-touch-icon" href="/icon.png">
+<style>
+  :root {
+    --bg: #F4F6F1; --surface: #FFFFFF; --text: #1E2A22; --muted: #5F6E64; --line: #E3E8E0;
+    --green: #2F7D4F; --green-soft: #DCEFE2; --orange: #E08A2C; --orange-soft: #FBEBD6;
+    --on-green: #FFFFFF; --shadow: 0 1px 2px rgba(30,42,34,.06), 0 8px 24px rgba(30,42,34,.06);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #111613; --surface: #1A211C; --text: #ECF1EA; --muted: #A2AFA6; --line: #2A332D;
+      --green: #4FB07A; --green-soft: #1F3A2A; --orange: #F0A04B; --orange-soft: #3A2A17;
+      --on-green: #0D1A12; --shadow: none;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #111613; --surface: #1A211C; --text: #ECF1EA; --muted: #A2AFA6; --line: #2A332D;
+    --green: #4FB07A; --green-soft: #1F3A2A; --orange: #F0A04B; --orange-soft: #3A2A17;
+    --on-green: #0D1A12; --shadow: none;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 17px/1.55 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif; overflow-x: hidden; }
+  img { max-width: 100%; display: block; }
+  a { color: var(--green); }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 16px; }
+  .brand .s { color: var(--green); } .brand .a { color: var(--orange); }
+
+  header.top { position: sticky; top: 0; z-index: 10; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: saturate(1.4) blur(12px); -webkit-backdrop-filter: saturate(1.4) blur(12px); border-bottom: 1px solid var(--line); }
+  header.top .wrap { display: flex; align-items: center; gap: 10px; height: 60px; }
+  header.top img { width: 34px; height: 34px; border-radius: 9px; background: #fff; }
+  header.top .brand { font-weight: 700; font-size: 20px; letter-spacing: -.2px; text-decoration: none; display: flex; align-items: center; gap: 10px; }
+  header.top nav { margin-left: auto; display: flex; gap: 20px; align-items: center; }
+  header.top nav a.link { color: var(--muted); text-decoration: none; font-size: 15px; }
+  header.top nav a.link:hover { color: var(--text); }
+  @media (max-width: 640px) { header.top nav a.link { display: none; } }
+
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: var(--green); color: var(--on-green); text-decoration: none; font-weight: 600; padding: 14px 22px; border-radius: 14px; font-size: 17px; border: 0; }
+  .btn.small { padding: 9px 16px; font-size: 15px; border-radius: 11px; }
+  .btn.ghost { background: transparent; color: var(--green); box-shadow: inset 0 0 0 2px var(--green); }
+  .btn:hover { filter: brightness(1.06); }
+
+  .hero { padding: 56px 0 40px; }
+  .hero .wrap { display: grid; grid-template-columns: 1.1fr .9fr; gap: 40px; align-items: center; }
+  .eyebrow { display: inline-block; background: var(--orange-soft); color: var(--orange); font-weight: 600; font-size: 14px; padding: 6px 12px; border-radius: 999px; }
+  h1 { font-size: clamp(38px, 6vw, 62px); line-height: 1.05; letter-spacing: -1.2px; margin: 16px 0 16px; }
+  h1 em { font-style: normal; color: var(--green); }
+  .lead { font-size: 20px; color: var(--muted); margin: 0 0 28px; max-width: 34em; }
+  .cta { display: flex; flex-wrap: wrap; gap: 12px; }
+  .proof { display: flex; flex-wrap: wrap; gap: 22px; margin-top: 30px; color: var(--muted); font-size: 15px; }
+  .proof b { display: block; color: var(--text); font-size: 26px; letter-spacing: -.5px; }
+  .phone { position: relative; justify-self: center; width: min(320px, 78vw); }
+  .phone .frame { border-radius: 46px; padding: 10px; background: #111; box-shadow: 0 30px 60px rgba(30,42,34,.18); }
+  .phone .frame img { border-radius: 37px; aspect-ratio: 1206 / 2150; object-fit: cover; object-position: top; background: var(--bg); width: 100%; }
+  .phone .badge { position: absolute; background: var(--surface); border-radius: 16px; padding: 10px 14px; box-shadow: var(--shadow); font-size: 14px; font-weight: 600; display: flex; gap: 8px; align-items: center; border: 1px solid var(--line); white-space: nowrap; }
+  .phone .b1 { left: -36px; top: 18%; }
+  .phone .b2 { right: -30px; bottom: 16%; }
+  @media (max-width: 860px) {
+    .hero .wrap { grid-template-columns: 1fr; }
+    .phone .b1 { left: -8px; } .phone .b2 { right: -8px; }
+  }
+
+  section { padding: 56px 0; }
+  .center { text-align: center; }
+  h2 { font-size: clamp(28px, 4vw, 40px); letter-spacing: -.8px; line-height: 1.12; margin: 0 0 12px; }
+  .sub { color: var(--muted); font-size: 18px; margin: 0 auto 36px; max-width: 36em; }
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  @media (max-width: 900px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 580px) { .grid { grid-template-columns: 1fr; } }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 20px; padding: 22px; box-shadow: var(--shadow); }
+  .card .ic { width: 46px; height: 46px; border-radius: 14px; display: grid; place-items: center; font-size: 24px; background: var(--green-soft); margin-bottom: 14px; }
+  .card.o .ic { background: var(--orange-soft); }
+  .card h3 { margin: 0 0 6px; font-size: 19px; letter-spacing: -.2px; }
+  .card p { margin: 0; color: var(--muted); font-size: 16px; }
+
+  .feature { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; padding: 28px 0; }
+  .feature.rev .text { order: 2; }
+  .feature .shot { justify-self: center; width: min(300px, 74vw); }
+  .feature .shot img { width: 100%; border-radius: 34px; border: 8px solid #111; box-shadow: 0 24px 48px rgba(30,42,34,.16); aspect-ratio: 1206 / 2150; object-fit: cover; object-position: top; background: var(--bg); }
+  .feature h3 { font-size: clamp(24px, 3.2vw, 32px); letter-spacing: -.5px; margin: 10px 0 10px; line-height: 1.15; }
+  .feature p { color: var(--muted); margin: 0 0 14px; }
+  .feature ul { margin: 0; padding: 0; list-style: none; }
+  .feature li { padding: 6px 0 6px 30px; position: relative; }
+  .feature li::before { content: ""; position: absolute; left: 0; top: 10px; width: 18px; height: 18px; border-radius: 50%; background: var(--green-soft) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5 10.5l3 3 7-7' fill='none' stroke='%232F7D4F' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/14px no-repeat; }
+  @media (max-width: 860px) { .feature { grid-template-columns: 1fr; gap: 28px; } .feature.rev .text { order: 0; } }
+
+  .trails { justify-self: center; width: min(420px, 100%); padding: 8px 20px 16px; }
+  .trails-head { font-weight: 700; padding: 14px 0 8px; }
+  .trail { display: flex; justify-content: space-between; gap: 12px; padding: 11px 0; border-top: 1px solid var(--line); font-size: 15px; }
+  .trail small { color: var(--muted); white-space: nowrap; font-size: 14px; }
+  .trails-more { color: var(--green); font-weight: 600; padding-top: 10px; border-top: 1px solid var(--line); }
+  .chips { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; max-width: 820px; margin: 0 auto; }
+  .chip { background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: 9px 16px; font-size: 15px; font-weight: 500; }
+
+  .band { background: var(--green); color: var(--on-green); border-radius: 28px; padding: 44px 28px; }
+  .band h2 { color: inherit; }
+  .band p { opacity: .92; }
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 28px 0; text-align: left; }
+  @media (max-width: 760px) { .steps { grid-template-columns: 1fr; } .band { padding: 36px 18px; } }
+  .step { background: rgba(255,255,255,.12); border-radius: 18px; padding: 18px; }
+  .step .n { width: 32px; height: 32px; border-radius: 50%; background: var(--orange); color: #fff; display: grid; place-items: center; font-weight: 700; margin-bottom: 10px; }
+  .step h3 { margin: 0 0 4px; font-size: 18px; color: inherit; }
+  .step p { margin: 0; font-size: 15px; }
+
+  .privacy { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  @media (max-width: 760px) { .privacy { grid-template-columns: 1fr; } }
+
+  footer { padding: 36px 0 48px; color: var(--muted); font-size: 14px; border-top: 1px solid var(--line); margin-top: 24px; }
+  footer .wrap { display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; align-items: center; }
+  .signup { margin: 8px auto 18px; max-width: 460px; display: flex; flex-direction: column; gap: 14px; text-align: left; }
+  .signup label { display: flex; flex-direction: column; gap: 6px; font-weight: 600; font-size: 15px; }
+  .signup label span { font-weight: 400; opacity: .8; }
+  .signup input, .signup textarea { font: inherit; font-weight: 400; font-size: 17px; padding: 13px 14px; border-radius: 12px; border: 2px solid transparent; background: #fff; color: #1E2A22; width: 100%; box-sizing: border-box; }
+  .signup textarea { resize: vertical; min-height: 84px; }
+  .signup input:focus, .signup textarea:focus { outline: none; border-color: var(--orange); }
+  .signup .hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+  .btn.light { background: #fff; color: #2F7D4F; font-size: 18px; padding: 16px 26px; cursor: pointer; }
+  .btn.light:disabled { opacity: .7; cursor: default; }
+  .signup .msg { margin: 0; font-weight: 600; min-height: 0; }
+  .signup .msg:empty { display: none; }
+  .signup .msg.err { background: var(--orange-soft); color: var(--text); padding: 10px 14px; border-radius: 12px; }
+  .signup .fine { margin: 0; font-size: 14px; opacity: .85; }
+  .signup.done { text-align: center; }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#"><img src="/icon.png" alt=""><span><span class="s">Steg</span><span class="a">Appen</span></span></a>
+    <nav>
+      <a class="link" href="#funktioner">Funktioner</a>
+      <a class="link" href="#prestationer">Prestationer</a>
+      <a class="link" href="#integritet">Integritet</a>
+      <a class="btn small" href="#kom-igang">Kom igång</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <span class="eyebrow">Gratis att testa på iPhone</span>
+        <h1>Gå mer.<br><em>Tillsammans.</em></h1>
+        <p class="lead">StegAppen gör varje promenad roligare. Ett stegmål som växer i din takt, vandringsleder runt om i Sverige, hundratals prestationer att låsa upp – och en topplista där du och dina vänner peppar varandra.</p>
+        <div class="cta">
+          <a class="btn" href="#kom-igang">Kom igång</a>
+          <a class="btn ghost" href="#funktioner">Se vad appen kan</a>
+        </div>
+        <div class="proof">
+          <div><b>340+</b>prestationer</div>
+          <div><b>78</b>vandringsleder</div>
+          <div><b>0 kr</b>under testet</div>
+        </div>
+      </div>
+      <div class="phone">
+        <div class="frame"><img src="img/vandra.png" alt="Mörtsjöslingan i Huddinge på kartan i StegAppen"></div>
+        <div class="badge b1">🏆 Ny prestation!</div>
+        <div class="badge b2">🥾 3,1 km · 4 100 steg</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="funktioner">
+    <div class="wrap">
+      <div class="center">
+        <h2>Allt du behöver för att röra dig mer</h2>
+        <p class="sub">Steg, vandring, träning och hälsa – samlat i en app som är byggd för att du ska vilja fortsätta.</p>
+      </div>
+      <div class="grid">
+        <div class="card"><div class="ic">📈</div><h3>Stegmål som växer med dig</h3><p>Börja på 5 000 steg om dagen. Varje måndag höjs målet med 1 000 tills du når 10 000 – i lagom takt.</p></div>
+        <div class="card o"><div class="ic">🥾</div><h3>Vandringar och leder</h3><p>Spela in dina turer med karta, höjdmeter och tid. 78 leder att gå – från Sörmlandsleden till sjön runt hörnet.</p></div>
+        <div class="card"><div class="ic">🏆</div><h3>Hundratals prestationer</h3><p>Städer, nöjesparker, fotbollsarenor, vandringsleder, streaks och mycket mer. Det finns alltid något nytt att jaga.</p></div>
+        <div class="card o"><div class="ic">👥</div><h3>Vänner och topplista</h3><p>Lägg till vänner med en länk, se veckans topplista och jämför era prestationer. Lite tävling gör underverk.</p></div>
+        <div class="card"><div class="ic">📅</div><h3>Bjud in till vandring</h3><p>Planera en dagstur eller en helg i fjällen. Skicka inbjudan via sms – vännerna svarar Kommer, Kanske eller Kommer inte.</p></div>
+        <div class="card o"><div class="ic">⚖️</div><h3>Vikt med prognos</h3><p>Väg dig och se din trend. Appen räknar ut vilket datum du når din målvikt om du fortsätter i samma takt.</p></div>
+        <div class="card"><div class="ic">💪</div><h3>Träna kroppen</h3><p>Övningar hemma eller på gymmet, med vikter och schema. Anta utmaningen att klara 100 armhävningar.</p></div>
+        <div class="card o"><div class="ic">💧</div><h3>Vatten och medicin</h3><p>Fyll på glas för glas mot dagens vattenmål. Få påminnelser om medicin – och veta när det är dags att hämta ut mer.</p></div>
+        <div class="card"><div class="ic">👟</div><h3>Koll på utrustningen</h3><p>Håll reda på hur långt dina skor har gått och vad ryggsäcken vägde – appen säger till när skorna är slitna.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="feature">
+        <div class="text">
+          <span class="eyebrow">Varje dag</span>
+          <h3>En dag i taget – med allt på ett ställe</h3>
+          <p>Startsidan visar dagens steg, hur långt det är kvar till målet och vad du har kvar att göra idag.</p>
+          <ul>
+            <li>Dagens uppgifter: steg, vatten, träning, vägning och medicin</li>
+            <li>Upptrappning från 5 000 till 10 000 steg om dagen</li>
+            <li>Påminnelse att röra på dig – bara om du inte redan nått målet</li>
+          </ul>
+        </div>
+        <div class="shot"><img src="img/idag.png" alt="Listan över dagens uppgifter i StegAppen" loading="lazy"></div>
+      </div>
+
+      <div class="feature rev">
+        <div class="text">
+          <span class="eyebrow">Ut i naturen</span>
+          <h3>Hitta nästa vandring</h3>
+          <p>Välj en led på kartan eller starta en egen tur. Appen visar sträcka, tid och höjdmeter – och bockar av leden när du gått den.</p>
+          <ul>
+            <li>78 leder i hela landet, från korta sjörundor till långa etapper</li>
+            <li>Bjud in vänner till dagsturer eller resor med övernattning</li>
+            <li>Gemensamma packlistor och vem som tar med vad</li>
+          </ul>
+        </div>
+        <div class="trails card">
+          <div class="trails-head">🗺️ Några av lederna</div>
+          <div class="trail"><span>Kungsleden: Abisko – Abiskojaure</span><small>Lappland</small></div>
+          <div class="trail"><span>Sörmlandsleden etapp 4</span><small>Stockholm</small></div>
+          <div class="trail"><span>Bohusleden: Angereds kyrka – Fontin</span><small>Göteborg</small></div>
+          <div class="trail"><span>Vildmarksleden: Hindås – Skatås</span><small>Göteborg</small></div>
+          <div class="trail"><span>Upplandsleden etapp 2</span><small>Stockholm</small></div>
+          <div class="trail"><span>Ostkustleden: Lönnhult – Krokstorp</span><small>Småland</small></div>
+          <div class="trail"><span>Trehörningen runt</span><small>Huddinge</small></div>
+          <div class="trails-more">+ 71 till</div>
+        </div>
+      </div>
+
+      <div class="feature">
+        <div class="text">
+          <span class="eyebrow">Motivation</span>
+          <h3>Alltid något nytt att låsa upp</h3>
+          <p>Över 340 prestationer belönar allt från din första vän till 10 000 steg i en ny stad. Se hur långt du har kvar till nästa.</p>
+          <ul>
+            <li>Slå dig själv – nya rekord nivå för nivå</li>
+            <li>Städer, nöjesparker och alla allsvenska arenor</li>
+            <li>Poäng att jämföra med vännerna</li>
+          </ul>
+        </div>
+        <div class="shot"><img src="img/prestationer.png" alt="Prestationer i StegAppen" loading="lazy"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="prestationer">
+    <div class="wrap center">
+      <h2>Över 340 prestationer att låsa upp</h2>
+      <p class="sub">Små vinster varje dag håller motivationen uppe. Här är några av dem:</p>
+      <div class="chips">
+        <span class="chip">👟 Slå dig själv: 10 000 steg</span>
+        <span class="chip">🔥 30 dagar i rad</span>
+        <span class="chip">🏙️ 10 000 steg i Stockholm</span>
+        <span class="chip">🎢 En dag på Liseberg</span>
+        <span class="chip">⚽ Alla allsvenska arenor</span>
+        <span class="chip">🥾 Gå en hel led</span>
+        <span class="chip">⛰️ 1 000 höjdmeter</span>
+        <span class="chip">🏔️ Mount Everest totalt</span>
+        <span class="chip">🇸🇪 Hela Sverige</span>
+        <span class="chip">💯 100 armhävningar</span>
+        <span class="chip">🤝 Första vännen</span>
+        <span class="chip">👑 Flest steg bland vännerna</span>
+        <span class="chip">🎄 Julpromenaden</span>
+        <span class="chip">🌅 Morgonpigg</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="kom-igang">
+    <div class="wrap">
+      <div class="band center">
+        <h2>Kom igång</h2>
+        <p>Vill du vara med och testa och utveckla StegAppen innan den släpps? Appen testas just nu på iPhone via Apples TestFlight, och det är gratis att vara med.</p>
+        <div class="steps">
+          <div class="step"><div class="n">1</div><h3>Anmäl dig</h3><p>Fyll i formuläret nedan med ditt namn och e-postadressen till ditt Apple-ID.</p></div>
+          <div class="step"><div class="n">2</div><h3>Installera TestFlight</h3><p>Hämta Apples gratisapp TestFlight och öppna inbjudan på din iPhone.</p></div>
+          <div class="step"><div class="n">3</div><h3>Börja gå</h3><p>Ge appen tillgång till stegräknaren, sätt ditt mål – och lägg till dina vänner.</p></div>
+        </div>
+        <form class="signup" id="anmal" novalidate>
+          <input type="text" name="hemsida" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <label>Namn<input name="namn" required maxlength="80" autocomplete="name" placeholder="För- och efternamn"></label>
+          <label>E-post till ditt Apple-ID<input name="epost" type="email" required maxlength="254" autocomplete="email" inputmode="email" placeholder="namn@exempel.se"></label>
+          <label>Något du vill berätta? <span>(valfritt)</span><textarea name="meddelande" maxlength="1000" rows="3" placeholder="T.ex. vilka funktioner du är mest nyfiken på"></textarea></label>
+          <button class="btn light" type="submit">Anmäl mig som testare</button>
+          <p class="msg" role="status" aria-live="polite"></p>
+          <p class="fine">Vi använder bara namnet och adressen för att bjuda in dig till testet. Ingen annan ser dem.</p>
+        </form>
+        <p>Berätta gärna vad du tycker när du testar – dina idéer och buggar formar appen. App Store kommer senare.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="integritet">
+    <div class="wrap">
+      <div class="center">
+        <h2>Dina data är dina</h2>
+        <p class="sub">Det tycker vi är självklart.</p>
+      </div>
+      <div class="privacy">
+        <div class="card"><div class="ic">📱</div><h3>Sparas på telefonen</h3><p>Steg, vandringar, vikt, medicin och träning sparas på din telefon.</p></div>
+        <div class="card o"><div class="ic">🤝</div><h3>Du väljer vad du delar</h3><p>Vänner ser dina veckosteg, prestationer och statistik. Din vikt och kartan över dina turer delar du bara om du själv slår på det.</p></div>
+        <div class="card"><div class="ic">🗑️</div><h3>Ta bort när du vill</h3><p>Sluta dela, ta bort vänner eller radera ditt konto – direkt i appen.</p></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="brand"><b><span class="s">Steg</span><span class="a">Appen</span></b> – gå mer, tillsammans.</span>
+    <span>© 2026 StegAppen</span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  // Publik (publishable) nyckel – samma som i appen. Tabellen tar bara emot nya anmälningar och går inte att läsa.
+  var API = "https://qakfrmfikyivjgmvjoda.supabase.co/rest/v1/testanmalningar";
+  var KEY = "sb_publishable_6jpqlNFNDgvZHiwgSIkpLQ_JWBoPD54";
+  var form = document.getElementById("anmal");
+  if (!form) return;
+  var msg = form.querySelector(".msg");
+  var btn = form.querySelector("button");
+  function show(text, err) { msg.textContent = text; msg.className = "msg" + (err ? " err" : ""); }
+  function thanks(text) {
+    form.classList.add("done");
+    form.innerHTML = '<p style="font-size:40px;margin:0">🎉</p><h3 style="margin:0;color:inherit;font-size:22px">Tack för din anmälan!</h3><p style="margin:0"></p>';
+    form.lastChild.textContent = text;
+  }
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    if (form.hemsida.value) { thanks("Vi hör av oss."); return; }
+    var namn = form.namn.value.trim(), epost = form.epost.value.trim(), meddelande = form.meddelande.value.trim();
+    if (!namn) { show("Skriv ditt namn.", true); form.namn.focus(); return; }
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(epost)) { show("Kontrollera e-postadressen.", true); form.epost.focus(); return; }
+    btn.disabled = true; show("Skickar …");
+    fetch(API, {
+      method: "POST",
+      headers: { apikey: KEY, "Content-Type": "application/json", Prefer: "return=minimal" },
+      body: JSON.stringify({ namn: namn, epost: epost, meddelande: meddelande })
+    }).then(function (r) {
+      if (r.ok) thanks("Du får en inbjudan från TestFlight till " + epost + " när du är tillagd. Håll utkik i inkorgen!");
+      else if (r.status === 409) thanks("Du är redan anmäld med " + epost + ". Inbjudan kommer så snart du är tillagd.");
+      else throw new Error(r.status);
+    }).catch(function () {
+      btn.disabled = false;
+      show("Det gick inte att skicka just nu. Försök igen om en stund.", true);
+    });
+  });
+})();
+</script>
+</body>
+</html>

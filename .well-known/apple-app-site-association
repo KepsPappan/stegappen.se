@@ -1,0 +1,10 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["G4DDV36NYT.se.stegappen.app"],
+        "components": [{ "/": "/v/*", "comment": "Vänlänkar till StegAppen" }]
+      }
+    ]
+  }
+}
