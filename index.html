@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>StegAppen – gå mer, tillsammans</title>
+<title>StegAppen – stegräknare och vandringsapp för iPhone</title>
 <meta name="description" content="StegAppen gör varje steg roligare: stegmål som växer med dig, 78 vandringsleder, över 340 prestationer och topplista med vänner. Hämtar steg från Hälsa-appen och Apple Watch. Testa gratis på iPhone.">
 <meta name="keywords" content="stegräknare, stegapp, steg, promenad, vandring, vandringsleder, Apple Hälsa, Apple Watch, prestationer, topplista, stegmål, iPhone">
 <meta name="theme-color" content="#2F7D4F">
 <meta name="color-scheme" content="light only">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="StegAppen">
-<meta property="og:title" content="StegAppen – gå mer, tillsammans">
+<meta property="og:title" content="StegAppen – stegräknare och vandringsapp för iPhone">
 <meta property="og:description" content="Smarta stegmål, vandringsleder, hundratals prestationer och topplista med vänner. Testa gratis på iPhone.">
 <meta property="og:url" content="https://stegappen.se/">
 <meta property="og:image" content="https://stegappen.se/img/og.png">
@@ -164,7 +164,115 @@
   .mock .m-tabs span.on { filter: none; opacity: 1; }
   .mock .m-tabs i { font-style: normal; font-size: 2.6cqw; font-weight: 600; color: var(--muted); }
   .mock .m-tabs span.on i { color: var(--orange); }
+  .faq { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 10px; }
+  .faq details { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 0 18px; }
+  .faq summary { cursor: pointer; list-style: none; font-weight: 700; font-size: 17px; padding: 16px 28px 16px 0; position: relative; }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after { content: "+"; position: absolute; right: 0; top: 12px; font-size: 24px; font-weight: 400; color: var(--green); }
+  .faq details[open] summary::after { content: "–"; }
+  .faq details p { margin: 0 0 16px; color: var(--muted); }
 </style>
+<script type="application/ld+json">
+[
+ {
+  "@context": "https://schema.org",
+  "@type": "MobileApplication",
+  "name": "StegAppen",
+  "url": "https://stegappen.se/",
+  "image": "https://stegappen.se/img/og.png",
+  "description": "Stegräknare och vandringsapp för iPhone: stegmål som växer med dig, 78 vandringsleder, över 340 prestationer och topplista med vänner. Hämtar steg från Hälsa-appen och Apple Watch.",
+  "operatingSystem": "iOS",
+  "applicationCategory": "HealthApplication",
+  "inLanguage": "sv",
+  "offers": {
+   "@type": "Offer",
+   "price": "0",
+   "priceCurrency": "SEK"
+  },
+  "author": {
+   "@type": "Person",
+   "name": "Thomas Borg"
+  }
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "StegAppen",
+  "url": "https://stegappen.se/",
+  "inLanguage": "sv"
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "Kostar StegAppen något?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Nej, appen är gratis att ladda ner och använda. Delen Träna kroppen låses upp med ett engångsköp på 59 kr – ingen prenumeration. Under testperioden är det gratis att vara med."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Fungerar StegAppen med Apple Watch?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Ja. Slår du på Apple Hälsa hämtar StegAppen dina steg från Hälsa-appen, där stegen från din Apple Watch räknas med – även när telefonen ligger kvar hemma. Det finns ingen separat app för klockan."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Hur räknar appen mina steg?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Med Apple Hälsa påslaget hämtas stegen från Hälsa-appen. Annars räknas de med telefonens egen rörelsesensor, även när appen är stängd."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Behöver jag skapa ett konto?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Nej. Allt fungerar utan konto, och dina data sparas på telefonen. Vill du lägga till vänner och vara med i topplistan loggar du in med Apple – det tar några sekunder."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Vilka vandringsleder finns i appen?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "78 leder runt om i Sverige, till exempel Kungsleden, Sörmlandsleden, Bohusleden, Upplandsleden och Ostkustleden – från korta sjörundor till långa etapper. Du kan också spela in egna turer."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Finns StegAppen för Android?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Just nu finns StegAppen bara för iPhone."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Hur kommer jag med i testet?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Fyll i formuläret under Kom igång med ditt namn och e-postadressen till ditt Apple-ID. När du är tillagd får du en inbjudan från Apples app TestFlight."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Kan jag radera mina uppgifter?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Ja. Du kan radera ditt konto direkt i appen, och allt som sparas på telefonen försvinner när du tar bort appen. Läs mer i integritetspolicyn."
+    }
+   }
+  ]
+ }
+]
+</script>
 </head>
 <body>
 
@@ -394,6 +502,48 @@
           <p class="fine">Vi använder bara namnet och adressen för att bjuda in dig till testet. Ingen annan ser dem. Läs mer i vår <a href="/integritet/" style="color:inherit">integritetspolicy</a>.</p>
         </form>
         <p>Berätta gärna vad du tycker när du testar – dina idéer och buggar formar appen. App Store kommer senare.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="fragor">
+    <div class="wrap">
+      <div class="center">
+        <h2>Vanliga frågor</h2>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>Kostar StegAppen något?</summary>
+          <p>Nej, appen är gratis att ladda ner och använda. Delen Träna kroppen låses upp med ett engångsköp på 59 kr – ingen prenumeration. Under testperioden är det gratis att vara med.</p>
+        </details>
+        <details>
+          <summary>Fungerar StegAppen med Apple Watch?</summary>
+          <p>Ja. Slår du på Apple Hälsa hämtar StegAppen dina steg från Hälsa-appen, där stegen från din Apple Watch räknas med – även när telefonen ligger kvar hemma. Det finns ingen separat app för klockan.</p>
+        </details>
+        <details>
+          <summary>Hur räknar appen mina steg?</summary>
+          <p>Med Apple Hälsa påslaget hämtas stegen från Hälsa-appen. Annars räknas de med telefonens egen rörelsesensor, även när appen är stängd.</p>
+        </details>
+        <details>
+          <summary>Behöver jag skapa ett konto?</summary>
+          <p>Nej. Allt fungerar utan konto, och dina data sparas på telefonen. Vill du lägga till vänner och vara med i topplistan loggar du in med Apple – det tar några sekunder.</p>
+        </details>
+        <details>
+          <summary>Vilka vandringsleder finns i appen?</summary>
+          <p>78 leder runt om i Sverige, till exempel Kungsleden, Sörmlandsleden, Bohusleden, Upplandsleden och Ostkustleden – från korta sjörundor till långa etapper. Du kan också spela in egna turer.</p>
+        </details>
+        <details>
+          <summary>Finns StegAppen för Android?</summary>
+          <p>Just nu finns StegAppen bara för iPhone.</p>
+        </details>
+        <details>
+          <summary>Hur kommer jag med i testet?</summary>
+          <p>Fyll i <a href="#kom-igang">formuläret under Kom igång</a> med ditt namn och e-postadressen till ditt Apple-ID. När du är tillagd får du en inbjudan från Apples app TestFlight.</p>
+        </details>
+        <details>
+          <summary>Kan jag radera mina uppgifter?</summary>
+          <p>Ja. Du kan radera ditt konto direkt i appen, och allt som sparas på telefonen försvinner när du tar bort appen. Läs mer i <a href="/integritet/">integritetspolicyn</a>.</p>
+        </details>
       </div>
     </div>
   </section>
