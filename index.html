@@ -127,7 +127,7 @@
   .signup .msg.err { background: var(--orange-soft); color: var(--text); padding: 10px 14px; border-radius: 12px; }
   .signup .fine { margin: 0; font-size: 14px; opacity: .85; }
   .signup.done { text-align: center; }
-  .health { margin: 0 0 22px; background: var(--surface); border: 1px solid var(--line); border-radius: 24px; padding: 28px; box-shadow: var(--shadow); }
+  .health { margin: 0; background: var(--surface); border: 1px solid var(--line); border-radius: 24px; padding: 28px; box-shadow: var(--shadow); }
   .health-head { display: flex; gap: 18px; align-items: flex-start; }
   .health-ic { flex: none; width: 56px; height: 56px; border-radius: 16px; background: #FDE4E6; display: grid; place-items: center; font-size: 28px; }
   .health h3 { margin: 0 0 6px; font-size: 22px; }
@@ -171,7 +171,7 @@
         <p class="lead">StegAppen gör varje promenad roligare. Ett stegmål som växer i din takt, vandringsleder runt om i Sverige, hundratals prestationer att låsa upp – och en topplista där du och dina vänner peppar varandra. Allt hämtas automatiskt från Hälsa-appen på din iPhone.</p>
         <div class="cta">
           <a class="btn" href="#kom-igang">Kom igång</a>
-          <a class="btn ghost" href="#funktioner">Se vad appen kan</a>
+          <a class="btn ghost" href="#halsa">Se vad appen kan</a>
         </div>
         <div class="proof">
           <div><b>340+</b>prestationer</div>
@@ -187,12 +187,8 @@
     </div>
   </section>
 
-  <section id="funktioner">
+  <section id="halsa">
     <div class="wrap">
-      <div class="center">
-        <h2>Allt du behöver för att röra dig mer</h2>
-        <p class="sub">Steg, vandring, träning och hälsa – samlat i en app som är byggd för att du ska vilja fortsätta.</p>
-      </div>
       <div class="health">
         <figure class="watch" aria-label="Illustration: en klocka visar steg och puls som hamnar i StegAppen">
           <svg viewBox="0 0 400 200" role="img" xmlns="http://www.w3.org/2000/svg">
@@ -251,17 +247,6 @@
             </ul>
           </div>
         </div>
-      </div>
-      <div class="grid">
-        <div class="card"><div class="ic">📈</div><h3>Stegmål som växer med dig</h3><p>Börja på 5 000 steg om dagen. Varje måndag höjs målet med 1 000 tills du når 10 000 – i lagom takt.</p></div>
-        <div class="card o"><div class="ic">🥾</div><h3>Vandringar och leder</h3><p>Spela in dina turer med karta, höjdmeter och tid. 78 leder att gå – från Sörmlandsleden till sjön runt hörnet.</p></div>
-        <div class="card"><div class="ic">🏆</div><h3>Hundratals prestationer</h3><p>Städer, nöjesparker, fotbollsarenor, vandringsleder, streaks och mycket mer. Det finns alltid något nytt att jaga.</p></div>
-        <div class="card o"><div class="ic">👥</div><h3>Vänner och topplista</h3><p>Lägg till vänner med en länk, se veckans topplista och jämför era prestationer. Lite tävling gör underverk.</p></div>
-        <div class="card"><div class="ic">📅</div><h3>Bjud in till vandring</h3><p>Planera en dagstur eller en helg i fjällen. Skicka inbjudan via sms – vännerna svarar Kommer, Kanske eller Kommer inte.</p></div>
-        <div class="card o"><div class="ic">⚖️</div><h3>Vikt med prognos</h3><p>Väg dig och se din trend. Appen räknar ut vilket datum du når din målvikt om du fortsätter i samma takt.</p></div>
-        <div class="card"><div class="ic">💪</div><h3>Träna kroppen</h3><p>Övningar hemma eller på gymmet, med vikter och schema. Anta utmaningen att klara 100 armhävningar.</p></div>
-        <div class="card o"><div class="ic">💧</div><h3>Vatten och medicin</h3><p>Fyll på glas för glas mot dagens vattenmål. Få påminnelser om medicin – och veta när det är dags att hämta ut mer.</p></div>
-        <div class="card"><div class="ic">👟</div><h3>Koll på utrustningen</h3><p>Håll reda på hur långt dina skor har gått och vad ryggsäcken vägde – appen säger till när skorna är slitna.</p></div>
       </div>
 
     </div>
@@ -342,6 +327,26 @@
         <span class="chip">👑 Flest steg bland vännerna</span>
         <span class="chip">🎄 Julpromenaden</span>
         <span class="chip">🌅 Morgonpigg</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="funktioner">
+    <div class="wrap">
+      <div class="center">
+        <h2>Allt du behöver för att röra dig mer</h2>
+        <p class="sub">Steg, vandring, träning och hälsa – samlat i en app som är byggd för att du ska vilja fortsätta.</p>
+      </div>
+      <div class="grid">
+        <div class="card"><div class="ic">📈</div><h3>Stegmål som växer med dig</h3><p>Börja på 5 000 steg om dagen. Varje måndag höjs målet med 1 000 tills du når 10 000 – i lagom takt.</p></div>
+        <div class="card o"><div class="ic">🥾</div><h3>Vandringar och leder</h3><p>Spela in dina turer med karta, höjdmeter och tid. 78 leder att gå – från Sörmlandsleden till sjön runt hörnet.</p></div>
+        <div class="card"><div class="ic">🏆</div><h3>Hundratals prestationer</h3><p>Städer, nöjesparker, fotbollsarenor, vandringsleder, streaks och mycket mer. Det finns alltid något nytt att jaga.</p></div>
+        <div class="card o"><div class="ic">👥</div><h3>Vänner och topplista</h3><p>Lägg till vänner med en länk, se veckans topplista och jämför era prestationer. Lite tävling gör underverk.</p></div>
+        <div class="card"><div class="ic">📅</div><h3>Bjud in till vandring</h3><p>Planera en dagstur eller en helg i fjällen. Skicka inbjudan via sms – vännerna svarar Kommer, Kanske eller Kommer inte.</p></div>
+        <div class="card o"><div class="ic">⚖️</div><h3>Vikt med prognos</h3><p>Väg dig och se din trend. Appen räknar ut vilket datum du når din målvikt om du fortsätter i samma takt.</p></div>
+        <div class="card"><div class="ic">💪</div><h3>Träna kroppen</h3><p>Övningar hemma eller på gymmet, med vikter och schema. Anta utmaningen att klara 100 armhävningar.</p></div>
+        <div class="card o"><div class="ic">💧</div><h3>Vatten och medicin</h3><p>Fyll på glas för glas mot dagens vattenmål. Få påminnelser om medicin – och veta när det är dags att hämta ut mer.</p></div>
+        <div class="card"><div class="ic">👟</div><h3>Koll på utrustningen</h3><p>Håll reda på hur långt dina skor har gått och vad ryggsäcken vägde – appen säger till när skorna är slitna.</p></div>
       </div>
     </div>
   </section>
