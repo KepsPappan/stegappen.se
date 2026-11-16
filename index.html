@@ -127,6 +127,17 @@
   .signup .msg.err { background: var(--orange-soft); color: var(--text); padding: 10px 14px; border-radius: 12px; }
   .signup .fine { margin: 0; font-size: 14px; opacity: .85; }
   .signup.done { text-align: center; }
+  .health { margin-top: 22px; background: var(--surface); border: 1px solid var(--line); border-radius: 24px; padding: 28px; box-shadow: var(--shadow); }
+  .health-head { display: flex; gap: 18px; align-items: flex-start; }
+  .health-ic { flex: none; width: 56px; height: 56px; border-radius: 16px; background: #FDE4E6; display: grid; place-items: center; font-size: 28px; }
+  .health h3 { margin: 0 0 6px; font-size: 22px; }
+  .health p { margin: 0; color: var(--muted); }
+  .health-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 22px; }
+  .health-cols > div { background: var(--bg); border-radius: 16px; padding: 18px; }
+  .health h4 { margin: 0 0 8px; font-size: 16px; color: var(--green); }
+  .health ul { margin: 0; padding-left: 20px; font-size: 16px; }
+  .health li { margin: 4px 0; }
+  @media (max-width: 640px) { .health { padding: 20px; } .health-head { flex-direction: column; gap: 12px; } .health-cols { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -149,7 +160,7 @@
       <div>
         <span class="eyebrow">Gratis att testa på iPhone</span>
         <h1>Gå mer.<br><em>Tillsammans.</em></h1>
-        <p class="lead">StegAppen gör varje promenad roligare. Ett stegmål som växer i din takt, vandringsleder runt om i Sverige, hundratals prestationer att låsa upp – och en topplista där du och dina vänner peppar varandra.</p>
+        <p class="lead">StegAppen gör varje promenad roligare. Ett stegmål som växer i din takt, vandringsleder runt om i Sverige, hundratals prestationer att låsa upp – och en topplista där du och dina vänner peppar varandra. Allt hämtas automatiskt från Hälsa-appen på din iPhone.</p>
         <div class="cta">
           <a class="btn" href="#kom-igang">Kom igång</a>
           <a class="btn ghost" href="#funktioner">Se vad appen kan</a>
@@ -184,6 +195,35 @@
         <div class="card"><div class="ic">💪</div><h3>Träna kroppen</h3><p>Övningar hemma eller på gymmet, med vikter och schema. Anta utmaningen att klara 100 armhävningar.</p></div>
         <div class="card o"><div class="ic">💧</div><h3>Vatten och medicin</h3><p>Fyll på glas för glas mot dagens vattenmål. Få påminnelser om medicin – och veta när det är dags att hämta ut mer.</p></div>
         <div class="card"><div class="ic">👟</div><h3>Koll på utrustningen</h3><p>Håll reda på hur långt dina skor har gått och vad ryggsäcken vägde – appen säger till när skorna är slitna.</p></div>
+      </div>
+      <div class="health">
+        <div class="health-head">
+          <div class="health-ic" aria-hidden="true">❤️</div>
+          <div>
+            <h3>Hämtar allt från Hälsa-appen</h3>
+            <p>Slå på Apple Hälsa när du startar appen, så hämtar StegAppen dina steg och hälsodata automatiskt – även från Apple Watch och andra klockor och vågar som sparar i Hälsa. Du behöver inte fylla i något själv.</p>
+          </div>
+        </div>
+        <div class="health-cols">
+          <div>
+            <h4>Hämtas från Hälsa</h4>
+            <ul>
+              <li>Steg och sträcka – med hela din historik bakåt i tiden</li>
+              <li>Träningspass</li>
+              <li>Vikt och kroppsmått</li>
+              <li>Puls och blodtryck</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Sparas i Hälsa</h4>
+            <ul>
+              <li>Dina vandringar</li>
+              <li>Vikt och kroppsmått du lägger in</li>
+              <li>Puls och blodtryck du lägger in</li>
+              <li>Vattenintag</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -275,7 +315,7 @@
         <div class="steps">
           <div class="step"><div class="n">1</div><h3>Anmäl dig</h3><p>Fyll i formuläret nedan med ditt namn och e-postadressen till ditt Apple-ID.</p></div>
           <div class="step"><div class="n">2</div><h3>Installera TestFlight</h3><p>Hämta Apples gratisapp TestFlight och öppna inbjudan på din iPhone.</p></div>
-          <div class="step"><div class="n">3</div><h3>Börja gå</h3><p>Ge appen tillgång till stegräknaren, sätt ditt mål – och lägg till dina vänner.</p></div>
+          <div class="step"><div class="n">3</div><h3>Börja gå</h3><p>Slå på Apple Hälsa så hämtas dina steg automatiskt. Sätt ditt mål – och lägg till dina vänner.</p></div>
         </div>
         <form class="signup" id="anmal" novalidate>
           <input type="text" name="hemsida" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
@@ -298,7 +338,7 @@
         <p class="sub">Det tycker vi är självklart.</p>
       </div>
       <div class="privacy">
-        <div class="card"><div class="ic">📱</div><h3>Sparas på telefonen</h3><p>Steg, vandringar, vikt, medicin och träning sparas på din telefon.</p></div>
+        <div class="card"><div class="ic">📱</div><h3>Sparas på telefonen</h3><p>Steg, vandringar, vikt, medicin och träning sparas på din telefon. Du väljer själv i Hälsa-appen vad StegAppen får läsa.</p></div>
         <div class="card o"><div class="ic">🤝</div><h3>Du väljer vad du delar</h3><p>Vänner ser dina veckosteg, prestationer och statistik. Din vikt och kartan över dina turer delar du bara om du själv slår på det.</p></div>
         <div class="card"><div class="ic">🗑️</div><h3>Ta bort när du vill</h3><p>Sluta dela, ta bort vänner eller radera ditt konto – direkt i appen.</p></div>
       </div>
