@@ -17,7 +17,7 @@
 <meta property="og:url" content="https://stegappen.se/leder/sorlyckan-bertilssons-stuga/">
 <meta property="og:locale" content="sv_SE">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="keywords" content="Sörlyckan, Bertilssons stuga, vandringsled Göteborg, Knipeflågsbergen, Sävedalen, Björkekärr, Delsjön, vandring Partille">
+<meta name="keywords" content="Sörlyckan, Bertilssons stuga, vandringsled Göteborg, Knipeflågsbergen, Sävedalen, Björkekärr, Delsjön, vandring Partille, fika Delsjön, Bertilssons stuga kafé">
 <link rel="icon" href="/icon.png">
 <link rel="apple-touch-icon" href="/icon.png">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
@@ -45,6 +45,18 @@
   "touristType": "Vandrare",
   "isAccessibleForFree": true,
   "publicAccess": true
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "CafeOrCoffeeShop",
+  "name": "Bertilssons stuga",
+  "address": {
+   "@type": "PostalAddress",
+   "streetAddress": "Delsjökärrvägen 26",
+   "addressLocality": "Göteborg",
+   "addressCountry": "SE"
+  },
+  "servesCuisine": "Fika och lunch"
  },
  {
   "@context": "https://schema.org",
@@ -90,6 +102,14 @@
     "acceptedAnswer": {
      "@type": "Answer",
      "text": "Leden startar vid Sörlyckan i Sävedalen i Partille och slutar vid Bertilssons stuga i Björkekärr i östra Göteborg. På vägen går den genom Knipeflågsbergens naturreservat. Du kan också gå den åt andra hållet."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Kan man köpa fika längs leden?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Ja, vid målet. Bertilssons stuga i Björkekärr är ett kafé med fika och lunch. Öppettiderna varierar, så kolla dem innan du går."
     }
    },
    {
@@ -164,6 +184,9 @@
   .app .btn { width: 100%; }
   .start p { margin: 0 0 12px; font-size: 15px; color: var(--muted); }
   .start .btn { width: 100%; margin-top: 8px; }
+  .fika { background: var(--orange-soft); border-color: transparent; }
+  .fika p { margin: 0 0 12px; font-size: 15px; color: var(--text); }
+  .fika .btn { width: 100%; }
 
   .near { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 14px; }
   .near a { text-decoration: none; color: var(--text); }
@@ -194,7 +217,7 @@
   <div class="crumbs"><a href="/">StegAppen</a> › Leder › Göteborg › Sörlyckan – Bertilssons stuga</div>
   <span class="eyebrow">Vandringsled · Göteborg</span>
   <h1>Sörlyckan – Bertilssons stuga</h1>
-  <p class="lead">En 3,3 km lång vandringsled från Sörlyckan i Sävedalen söderut genom Knipeflågsbergens naturreservat till Bertilssons stuga i Björkekärr, på gränsen mellan Partille och Göteborg. Lagom för en kvällspromenad eller en lugn söndagstur.</p>
+  <p class="lead">En 3,3 km lång vandringsled från Sörlyckan i Sävedalen söderut genom Knipeflågsbergens naturreservat till Bertilssons stuga i Björkekärr, på gränsen mellan Partille och Göteborg. Lagom för en kvällspromenad eller en lugn söndagstur – med fika på kaféet i Bertilssons stuga vid målet.</p>
 
   <div class="layout">
     <div>
@@ -231,6 +254,7 @@
         <details><summary>Hur lång är leden Sörlyckan – Bertilssons stuga?</summary><p>Leden är 3,3 km enkel väg. Går du samma väg tillbaka blir det 6,6 km.</p></details>
         <details><summary>Hur lång tid tar det att gå leden?</summary><p>Ungefär 50 minuter i lugnt tempo, enkel väg. Det blir cirka 4 400 steg.</p></details>
         <details><summary>Var startar och slutar leden?</summary><p>Leden startar vid Sörlyckan i Sävedalen i Partille och slutar vid Bertilssons stuga i Björkekärr i östra Göteborg. På vägen går den genom Knipeflågsbergens naturreservat. Du kan också gå den åt andra hållet.</p></details>
+        <details><summary>Kan man köpa fika längs leden?</summary><p>Ja, vid målet. Bertilssons stuga i Björkekärr är ett kafé med fika och lunch. Öppettiderna varierar, så kolla dem innan du går.</p></details>
         <details><summary>Är leden en rundslinga?</summary><p>Nej, leden går från punkt till punkt. Gå samma väg tillbaka eller ta kollektivtrafiken från målet. Vill du gå längre kan du koppla ihop den med Ugglemossen runt eller Bohusleden vid Skatås.</p></details>
       </section>
     </div>
@@ -251,6 +275,11 @@
           <li>Jämför med dina vänner</li>
         </ul>
         <a class="btn" href="/#kom-igang">Testa StegAppen gratis</a>
+      </div>
+      <div class="card fika">
+        <h3 style="margin:0 0 6px;font-size:18px">☕ Fika vid målet</h3>
+        <p>Bertilssons stuga, där leden slutar, är ett kafé med fika och lunch. Öppettiderna varierar – kolla innan du går.</p>
+        <a class="btn ghost small" href="https://www.google.com/maps/search/?api=1&amp;query=Bertilssons+stuga+Delsj%C3%B6k%C3%A4rrv%C3%A4gen+26+G%C3%B6teborg" rel="noopener">Öppettider i Google Maps</a>
       </div>
       <div class="card start">
         <h3 style="margin:0 0 6px;font-size:18px">Hitta till starten</h3>
